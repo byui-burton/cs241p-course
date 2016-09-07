@@ -9,17 +9,91 @@
 
 <body>
 <div id="courseTitle">
-    <img class="logo" src="../course/byui.png" />
-    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
 </div>
     <article>
         <h2>01 Prove : Assignment</h2>
 
-        <h3>Overview</h3>
-        <p></p>
+        <h3>Objective</h3>
+        <p>Demonstrate knowledge of variables, conditionals, and loops in Python.</p>
 
+        <h3>Overview</h3>
+        <p>Write a Python 3 program that randomly selects a number from 1-100, and then prompts the user for guesses. After each incorrect guess, the program helps the user by directing them to guess higher or lower. When the user guesses the correct number, the program will display the number of guesses the user made and ask them if they would like to play again.
+        </p>
+
+        <h3>Sample Output</h3>
+<pre><code class="bash">
+Welcome to the number guessing game!
+Enter random seed: cat
+
+Please enter a guess: 42
+Lower
+
+Please enter a guess: 25
+Higher
+
+Please enter a guess: 30
+Higher
+
+Please enter a guess: 35
+Lower
+
+Please enter a guess: 33
+Lower
+
+Please enter a guess: 32
+Lower
+
+Please enter a guess: 31
+Congratulations. You guessed it!
+It took you 7 guesses.
+
+Would you like to play again (yes/no)? yes
+
+Please enter a guess: 75
+Higher
+
+Please enter a guess: 80
+Higher
+
+Please enter a guess: 90
+Lower
+
+Please enter a guess: 85
+Lower
+
+Please enter a guess: 82
+Congratulations. You guessed it!
+It took you 5 guesses.
+
+Would you like to play again (yes/no)? no
+Thank you. Goodbye.
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>An auto-grading testbed script is provided for you to help evaluate your program. This same testbed script will be used as part of the grading of your program. However, unlike the Checkpoint programs, <strong>your code will also be evaluated</strong> for style and overall design / implementation.</p>
+
+        <p>The TestBed script can be run as follows:</p>
+
+<pre><code class="bash">
+testBed cs241/assign01 myAssign01.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename. Example (assuming my file is named "myAssign01.py":</p>
+
+<pre><code class="bash">
+submit myAssign01.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment (assign01) from the list.</p>
 
     </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 

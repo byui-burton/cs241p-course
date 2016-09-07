@@ -73,6 +73,14 @@ pre code {
 	border: 1px solid #CCC;
 }
 
+pre code.hljs {
+	padding-bottom: 25px;
+}
+
+code .user-input {
+	text-decoration: underline;
+}
+
 img.screenshot {
 	display: block;
     max-height: 60px;
