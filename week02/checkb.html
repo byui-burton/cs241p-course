@@ -9,45 +9,44 @@
 
 <body>
 <div id="courseTitle">
-    <img class="logo" src="../course/byui.png" />
-    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
 </div>
     <article>
-        <h2>01 Prepare : Checkpoint B</h2>
+        <h2>02 Prepare : Checkpoint B</h2>
 
         <h3>Objective</h3>
-        <p></p>
+        <p>Demonstrate file reading.</p>
 
         <h3>Overview</h3>
-        <p></p>
+        <p>Write a Python 3 program that reads an input and counts the number of words and the number of lines in that file. The input file should be specified on the command line, such as: <code>python3 check02b.py myFile.txt</code>.</p>
 
         <h3>Sample Output</h3>
-<pre><code>
+
+<pre><code class="bash">
+$ python3 check02b.py /home/cs241/check02b/file1.txt
+The file '/home/cs241/check02b/file1.txt' contains:
+Words: 10
+Lines: 3
 </code></pre>
 
         <h3>Automatic Grading Script (TestBed)</h3>
-        <p>This assignment is pass/fail. In order to receive credit it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
 
-        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command providing the class and test script to run and the program to run it on as follows:</p>
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
 
-<pre><code>
-testBed class/assignment yourFile.py
-</code></pre>
-
-<p>Thus, for this checkpoint, if my file were named "check01b.py", I would type the following:</p>
-
-<pre><code>
-testBed cs241/check01b check01b.py
+<pre><code class="bash">
+testBed cs241/check02b check02b.py
 </code></pre>
 
         <h3>Submission</h3>
-        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename. Example (assuming my file is named "check01b.py":</p>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
 
-<pre><code>
-submit check01b.py
+<pre><code class="bash">
+submit check02b.py
 </code></pre>
 
-        <p>You should then select the appropriate course (CS 241), instructor, and assignment (check01b) from the list.</p>
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
 
     </article>
 
