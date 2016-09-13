@@ -71,6 +71,33 @@ Would you like to play again (yes/no)? no
 Thank you. Goodbye.
 </code></pre>
 
+        <h4>Hint: Working with Random Numbers</h4>
+        <p>Python has a module for easily working with random numbers. You can import <code>randint</code> from the random module, and then call that function to return a random number from a min to max value:</p>
+
+<pre><code class="python">
+from random import randint
+
+num = randint(low, high)
+</code></pre>
+
+        <p>In order for the testBed to predict what your random numbers will be, you will need to "seed" it with a certain value to begin. This can be done by importing <code>random</code> and then calling the <code>random.seed()</code> function with a value. This only needs to be called once at the beginning of your program, not every time a random number is generated.</p>
+
+        <p>Putting it all together would like something like this:</p>
+
+<pre><code class="python">
+import random
+from random import randint
+
+# ... other stuff here ...
+random.seed(the_seed_value)
+
+# ... possibly more stuff here ...
+num = randint(1, 50)
+
+# the variable num now contains a random number from 1 to 50
+</code></pre>
+
+
         <h3>Automatic Grading Script (TestBed)</h3>
         <p>An auto-grading testbed script is provided for you to help evaluate your program. This same testbed script will be used as part of the grading of your program. However, unlike the Checkpoint programs, <strong>your code will also be evaluated</strong> for style and overall design / implementation.</p>
 
