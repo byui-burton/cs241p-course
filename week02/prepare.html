@@ -16,11 +16,62 @@
         <h2>02 Prepare : Reading</h2>
 
         <h3>Overview</h3>
-        <p>Before coming to class this week, prepare yourself by</p>
+        <p>This week your preparation material will again come from <a href="https://www.codecademy.com/learn/python" target="_BLANK">CodeAcademy's Python tutorial</a>. For this week, please complete the first lesson in the following modules:</p>
 
-        <h3>Submission</h3>
-        <p>You will demonstrate your preparation by taking a short preparation quiz and completing two checkpoint assignments.</p>
+        <ul>
+            <li><p>Unit 4 - Functions</p></li>
+        </ul>
 
+        <p>Then, refer to the information below on working with files and parsing strings in Python.</p>
+
+        <h4>Reading from Files in Python</h4>
+        <p>There are several ways to read data from files in Python, but if all you need to do is open it and read straight through it, the process is very simple.</p>
+
+        <p>To open a file, simply call <code>open(<em>filename</em>)</code>, for example:</p>
+
+<pre><code class="python">
+f = open("myFile.txt", "r")
+</code></pre>
+
+        <p>The <code>"r"</code> says that we are opening the file just for reading.</p>
+
+        <p>Once, open, we can get all the lines of the file at once, or go through them one at a time.</p>
+
+<pre><code class="python">
+# This is one way
+all_lines = f.readlines() # reads all the lines into the all_lines variable
+</code></pre>        
+
+<pre><code class="python">
+# This was is probably even easier
+for line in f: # gets one line at a time from the file
+    print line # we can print it or do anything else we want with it here
+</code></pre>
+
+        <h4>Parsing Strings in Python</h4>
+        <p>There are also may ways to work with strings in Python, depending on the complexity of the task at hand. The simplest case is when you need to split a string based on a delimiter character. In this case you can use the <code>.split(delimiter)</code> function as follows:</p>
+
+
+<pre><code class="python">
+# Consider a line with a : as a delimiter
+line = "this:line:has:lots:of:words:in:it"
+
+# The split function breaks a single string up into a list of strings
+words = line.split(":")
+
+# You can work with the entire list:
+print(words)
+
+# Or access a specific word:
+print(words[3])
+
+# Or access each of them one at a time
+for word in words:
+    print(word)
+</code></pre>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
 
     </article>
 

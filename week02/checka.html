@@ -19,16 +19,56 @@
         <p>Demonstrate use of function parameters and return values.</p>
 
         <h3>Overview</h3>
-        <p></p>
+        <p>Write a Python 3 program that prompts the user for 3 postive numbers (or zero) and then adds them together. If the user enters a negative number, the program should reprompt them until they enter a postive number.</p>
+
+        <p>Divide your program into two functions:</p>
+        <ul>
+            <li><p><code>promptNumber</code> - Prompts for a number, and keeps re-prompting as long as it is negative. Then, returns the number.</p></li>
+            <li><p><code>computeSum</code> - Accepts 3 numbers, adds them together and returns the sum.</p></li>
+            <li><p><code>main</code> - Calls the <code>promptNumber</code> function 3 times, saves the return value into three different variables, then passes those 3 variables to the <code>computeSum</code> function. Finally, saves the result of <code>computeSum</code> into a variable and displays it.</p></li>
+        </ul>
+
+        <p>Then, include the following code at the bottom of your program to tell it to start with the main function:</p>
+
+<pre><code class="python">
+if __name__ == "__main__":
+    main()
+</code></pre>
 
         <h3>Sample Output</h3>
 
 <pre><code class="bash">
+Enter a positive number: 3
 
+Enter a positive number: 6
+
+Enter a positive number: 42
+
+The sum is: 51
 </code></pre>
+
+<p>Or another run:</p>
+<pre><code class="bash">
+Enter a positive number: -3
+Invalid entry. The number must be positive.
+Enter a positive number: -20
+Invalid entry. The number must be positive.
+Enter a positive number: 20
+
+Enter a positive number: 40
+
+Enter a positive number: -80
+Invalid entry. The number must be positive.
+Enter a positive number: 80
+
+The sum is: 140
+</code></pre>
+
 
         <h3>Automatic Grading Script (TestBed)</h3>
         <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the purpose of this assignment is for you to practice using functions, <strong>you must include at least the 3 functions</strong> as described above to receive credit for this assignment.</p>
 
         <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
 
