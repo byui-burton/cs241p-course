@@ -16,7 +16,49 @@
         <h2>02 Teach : Team Activity</h2>
 
         <h3>Overview</h3>
-        <p></p>
+        <p>Write a Python 3 program to read the contents of a file and count the occurrences of a particular word.</p>
+
+        <h3>Instructions</h3>
+        <p>Divide into groups of 2-3, working on one laptop.</p>
+
+        <p>Write a program that prompts the user for a file, reads it line by line, splits it into words, and then counts the number of times the word "pride" occurs.</p>
+
+        <p>Use the following two files for testing:</p>
+        <ul>
+            <li><p><code>/home/cs241/ta02/burton.txt</code> - Very small. Useful for first pass testing.</p></li>
+            <li><p><code>/home/cs241/ta02/benson.txt</code> - Much larger...useful for pondering ;-).</p></li>
+        </ul>
+
+        <p>To accomplish this task, complete the following:</p>
+
+        <h4>Core Requirements</h4>
+        <ol>
+            <li><p>Create a function <code>prompt_filename</code> that prompts the user for a filename and returns it. Create a <code>main</code> function that calls the <code>prompt_filename</code> function, and displays the text, <code>Opening file '...'</code> replacing the "..." with the actual filename. Then, use the <code>__name__</code> syntax to call the initial main function. Run your program and ensure that it words correctly.</p></li>
+
+            <li><p>Create another function, <code>parse_file</code> that should receive a filename from <code>main</code>. It should then open the file and read through it line by line and word by word. For testing purposes, at this point print out each word in the file at this point.</p></li>
+            
+            <li><p>Change your <code>parse_file</code> function so that it does not print anything out, but instead counts the number of times the word "pride" occurs. Have the function return this number and then change main to display this to the screen (e.g., "The word pride occurs xx times in this file").</p></li>
+        </ol>
+
+
+        <h4>Stretch Challenges</h4>
+        <p>After finishing the core requirements, help everyone on your larger team complete them. When everyone has completed the core requirements, please move on to these stretch challenges.</p>
+        <ol>
+            <li><p>Change your program so that it is case-insensitive. In other words, both "Pride" and "pride" should be counted.</p></li>
+            <li><p>Change your program so that it can count any word, not just "pride". Add a function to prompt the user for the word of their choice, then pass that word to the <code>parse_file</code> function and use it when displaying your results.</p></li>
+            <li><p>Change your program so that it counts any words that contain the user's word as well. For example, if the user enters "pride" the words "pride" and "prideful" would both be counted.</p></li>
+        </ol>
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week02/ta-solution.py" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+
+        <h3>Submission</h3>
+        <p>When you have finished this activity, please fill out the assessment in I-Learn. You are welcome to complete any additional parts of this activity by yourself or with others after class before submitting the assessment.</p>
 
 
     </article>
