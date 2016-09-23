@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>03 Prepare : Checkpoint A</h2>
+
+        <h3>Objective</h3>
+        <p>Demonstrate basic classes in Python.</p>
+
+        <h3>Instructions</h3>
+        <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+            <p>Write a Python 3 program according to the following:</p>
+                <ul>
+                    <li><p>Create a class for a Student, that contains a first name, a last name, and an id.</p></li>
+                    <li><p>Create a function called prompt_student that creates a new student object, then prompts the user for a first name, last name, and id. The function should assign these to the appropriate properties of the object and return it.</p></li>
+                    <li><p>Create a function called display_student that accepts a student object, and displays its information in the following format: "id - FirstName LastName".</p></li>
+
+                </ul>
+
+                <p>
+                    Then, create a main function that does the following:
+                </p>
+
+                <ul>
+                    <li><p>Calls the prompt_student function and saves the returned value in a variable called "user".</p></li>
+                    <li><p>Pass the user object to the display_student function to be displayed.</p></li>
+                </ul>
+            </p>
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Please enter your first name: <span class="user-input">Ashley</span>
+Please enter your last name: <span class="user-input">Smith</span>
+Please enter your id number: <span class="user-input">12512</span>
+
+Your information:
+12512 - Ashley Smith
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of classes. <strong>You must use classes</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check03a check03a.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check03a.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment (check03a) from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
