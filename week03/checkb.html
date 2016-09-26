@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>03 Prepare : Checkpoint B</h2>
+
+        <h3>Objective</h3>
+        <p>Demonstrate basic class methods (member functions) in Python.</p>
+
+        <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+        <h3>Introduction</h3>
+        <p>Recall from your mathematics classes that a complex number is composed of two parts, a real part and an imaginary part. We could write a complex number in the form "3 + 4i" where 3 is the real part and 4 is the imaginary part. For this program, we will create a new class for complex numbers, and write methods (member functions) to prompt for them and display them.</p>
+
+        <h3>Instructions</h3>
+
+            <p>Write a Python 3 program according to the following:</p>
+                <ul>
+                    <li><p>Create a class for a Complex number that has two member variables, "real" and "imaginary".</p></li>
+                    <li><p>Create an initializer function for this class that sets each part to 0.</p></li>
+                    <li><p>Create a prompt method (member function) that will prompt the user for the two values and set them appropriately.</p></li>
+                    <li><p>Create a display method (member function) that displays the complex number in the form "3 + 4i". For this assignment, you need not worry about handling negative numbers, or about simplifying the display if either value is 0.</p></li>
+                </ul>
+
+                <p>
+                    Then, in your main function you should create two new complex numbers. Display them (which should show 0 + 0i), prompt the user for each one, and display them again.
+                </p>
+
+                <p>To help you see how to work with these values, a main function is provided for you. Your task is to create the Complex class to make this work.</p>
+
+                <p>The file to start with is found at: <code>/home/cs241/check03b.py</code>. You can copy it to your directory with the following command:</p>
+
+<pre><code class="bash">
+cp /home/cs241/check03b.py .
+</code></pre>
+
+                <p>Don't forget the "." at the end, it tells linux to copy it to your current directory.</p>
+
+            </p>
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+The values are:
+0 + 0i
+0 + 0i
+
+Please enter the real part: <span class="user-input">3</span>
+Please enter the imaginary part: <span class="user-input">4</span>
+
+Please enter the real part: <span class="user-input">6</span>
+Please enter the imaginary part: <span class="user-input">10</span>
+
+The values are:
+3 + 4i
+6 + 10i
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of classes. <strong>You must use classes</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check03b check03b.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check03b.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment (check03b) from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
