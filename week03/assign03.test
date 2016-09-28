@@ -1,0 +1,194 @@
++
+=Enter command: 
+<status
+=(10, 10) - Fuel: 100\n
+=Enter command: 
+<left
+=Enter command: 
+<status
+=(9, 10) - Fuel: 95\n
+=Enter command: 
+<left
+=Enter command: 
+<left
+=Enter command: 
+<left
+=Enter command: 
+<status
+=(6, 10) - Fuel: 80\n
+=Enter command: 
+<right
+=Enter command: 
+<status
+=(7, 10) - Fuel: 75\n
+=Enter command: 
+<up
+=Enter command: 
+<up
+=Enter command: 
+<down
+=Enter command: 
+<status
+=(7, 9) - Fuel: 60\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<up
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<status
+=(7, 8) - Fuel: 25\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Insufficient fuel to perform action\n
+=Enter command: 
+<status
+=(7, 8) - Fuel: 10\n
+=Enter command: 
+<left
+=Enter command: 
+<left
+=Enter command: 
+<left
+=Insufficient fuel to perform action\n
+=Enter command: 
+<status
+=(5, 8) - Fuel: 0\n
+=Enter command: 
+<quit
+=Goodbye.\n
+-
++
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<fire
+=Insufficient fuel to perform action\n
+=Enter command: 
+<status
+=(10, 10) - Fuel: 10\n
+=Enter command: 
+<quit
+=Goodbye.\n
+-
++
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<status
+=(15, 10) - Fuel: 75\n
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<status
+=(20, 10) - Fuel: 50\n
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<status
+=(25, 10) - Fuel: 25\n
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<right
+=Enter command: 
+<status
+=(30, 10) - Fuel: 0\n
+=Enter command: 
+<right
+=Insufficient fuel to perform action\n
+=Enter command: 
+<status
+=(30, 10) - Fuel: 0\n
+=Enter command: 
+<right
+=Insufficient fuel to perform action\n
+=Enter command: 
+<right
+=Insufficient fuel to perform action\n
+=Enter command: 
+<status
+=(30, 10) - Fuel: 0\n
+=Enter command: 
+<quit
+=Goodbye.\n
+-
++
+=Enter command: 
+<status
+=(10, 10) - Fuel: 100\n
+=Enter command: 
+<jump
+=Enter command: 
+<jump
+=Enter command: 
+<run
+=Enter command: 
+<status
+=(10, 10) - Fuel: 100\n
+=Enter command: 
+<right
+=Enter command: 
+<up
+=Enter command: 
+<fire
+=Pew! Pew!\n
+=Enter command: 
+<status
+=(11, 9) - Fuel: 75\n
+=Enter command: 
+<quit
+=Goodbye.\n
+-

@@ -35,7 +35,7 @@
 
         <p>The robot should begin at location (10, 10), and should start with a fuel amount of 100.</p>
 
-        <p>When told to move, the robot's fuel should decrease by 5, and it should move one unit in the desired direction (left/right means -1/+1 to the x-coordinate, down/up means -1/+1 to the y-coordinate). Displaying the status should print the location and fuel to the console in the format: "(<em>x-coordinate</em>,&nbsp;<em>y-coordinate</em>)&nbsp;-&nbsp;Fuel:&nbsp;<em>fuel-amount</em>", such as <code>(-3,&nbsp;4)&nbsp;-&nbsp;Fuel:&nbsp;75</code>.</p>
+        <p>When told to move, the robot's fuel should decrease by 5, and it should move one unit in the desired direction (left/right means -1/+1 to the x-coordinate, down/up means -1/+1 to the y-coordinate). Displaying the status should print the location and fuel to the console in the format: "(<em>x-coordinate</em>,&nbsp;<em>y-coordinate</em>)&nbsp;-&nbsp;Fuel:&nbsp;<em>fuel-amount</em>", such as <code>(9,&nbsp;4)&nbsp;-&nbsp;Fuel:&nbsp;75</code>.</p>
 
         <p>Firing the laser should output "Pew! Pew!" to the console and reduce the fuel-amount by 15.</p>
 
@@ -59,6 +59,51 @@
         <h4>Design</h4>
         <p>Your program should demonstrate good object-oriented design principles. You should use functions for appropriate main interaction, and a class with appropriate variables and methods (member functions) to model the robot.</p>
         <p>Make sure to use good style including variable names, function headers, and appropriate comments. Avoid global variables and other elements of code that will make your code difficult to read and maintain.</p>
+
+        <h3>Sample Output</h3>
+        <p>And example run of the program could look something like the following:</p>
+
+<pre><code class="bash">
+Enter command: status
+(10, 10) - Fuel: 100
+Enter command: left
+Enter command: status
+(9, 10) - Fuel: 95
+Enter command: left
+Enter command: left
+Enter command: left
+Enter command: status
+(6, 10) - Fuel: 80
+Enter command: right
+Enter command: status
+(7, 10) - Fuel: 75
+Enter command: up
+Enter command: up
+Enter command: down
+Enter command: status
+(7, 9) - Fuel: 60
+Enter command: fire
+Pew! Pew!
+Enter command: up
+Enter command: fire
+Pew! Pew!
+Enter command: status
+(7, 8) - Fuel: 25
+Enter command: fire
+Pew! Pew!
+Enter command: fire
+Insufficient fuel to perform action
+Enter command: status
+(7, 8) - Fuel: 10
+Enter command: left
+Enter command: left
+Enter command: left
+Insufficient fuel to perform action
+Enter command: status
+(5, 8) - Fuel: 0
+Enter command: quit
+Goodbye.
+</code></pre>
 
         <h3>Automatic Grading Script (TestBed)</h3>
         <p>To assist you in your development, an automated test script is provided. Please keep in mind, that unlike checkpoints, your program will also be evaluated for code quality and correctness.</p>
