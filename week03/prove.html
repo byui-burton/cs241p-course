@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>03 Prove : Assignment</h2>
+
+        <h3>Overview</h3>
+        <p>This assignment will give you practice using classes in Python to solve a problem.</p>
+
+        <h3>Instructions</h3>
+        <p>Write a Python 3 program to model driving a robot around in an environment. The robot has the following attributes:</p>
+        <ul>
+            <li><p>x-coordinate</p></li>
+            <li><p>y-coordinate</p></li>
+            <li><p>fuel amount</p></li>
+        </ul>
+
+        <p>It can do the following things:</p>
+        <ul>
+            <li><p>move left, right, up, and down</p></li>
+            <li><p>display its current status</p></li>
+            <li><p>fire its laser</p></li>
+        </ul>
+
+        <p>The robot should begin at location (10, 10), and should start with a fuel amount of 100.</p>
+
+        <p>When told to move, the robot's fuel should decrease by 5, and it should move one unit in the desired direction (left/right means -1/+1 to the x-coordinate, down/up means -1/+1 to the y-coordinate). Displaying the status should print the location and fuel to the console in the format: "(<em>x-coordinate</em>,&nbsp;<em>y-coordinate</em>)&nbsp;-&nbsp;Fuel:&nbsp;<em>fuel-amount</em>", such as <code>(-3,&nbsp;4)&nbsp;-&nbsp;Fuel:&nbsp;75</code>.</p>
+
+        <p>Firing the laser should output "Pew! Pew!" to the console and reduce the fuel-amount by 15.</p>
+
+        <p>If the robot does not have enough fuel for any of the above actions, it should display the text, "Insufficient fuel to perform action". In that case it should not move, fire the laser, or reduce the fuel.</p>
+
+        <h4>User Interface</h4>
+        <p>The user is presented with a prompt: "Enter command: " and can enter any of the following commands:</p>
+
+        <ul>
+            <li><p>left</p></li>
+            <li><p>right</p></li>
+            <li><p>up</p></li>
+            <li><p>down</p></li>
+            <li><p>fire</p></li>
+            <li><p>status</p></li>
+            <li><p>quit</p></li>
+        </ul>
+
+        <p>Any other commands should be ignored, and the user re-prompted. When the user enters the quit command, the program should display the text, "Goodbye" and then exit.</p>
+
+        <h4>Design</h4>
+        <p>Your program should demonstrate good object-oriented design principles. You should use functions for appropriate main interaction, and a class with appropriate variables and methods (member functions) to model the robot.</p>
+        <p>Make sure to use good style including variable names, function headers, and appropriate comments. Avoid global variables and other elements of code that will make your code difficult to read and maintain.</p>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>To assist you in your development, an automated test script is provided. Please keep in mind, that unlike checkpoints, your program will also be evaluated for code quality and correctness.</p>
+
+<pre><code class="bash">
+testBed cs241/assign03 assign03.py
+</code></pre>
+
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename. Example:</p>
+
+<pre><code class="bash">
+submit assign03.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+    </article>
+
+</body>
+
+</html>
