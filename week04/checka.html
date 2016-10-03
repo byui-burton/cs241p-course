@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>04 Prepare : Checkpoint A</h2>
+
+        <h3>Objective</h3>
+        <p>Demonstrate composition in Python (a class that contains another).</p>
+
+        <h3>Overview</h3>
+        <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+        <p>For this exercise, you will create a class to model books and the author that wrote it. Note the relationship that a book <em>has an</em> author.</p>
+
+        <p>At this point, you should put all of your classes and other code in the same file. Don't worry about separating it out into separate modules.</p>
+
+        <h3>Instructions</h3>
+
+            <p>Write a Python 3 program according to the following:</p>
+            <p>Person:</p>
+                <ul>
+                    <li><p>Create a class for a Person that contains a name and a birth year. The author of a book will be a Person object.</p></li>
+                    <li><p>Create an initializer for your Person class to set the default name to be "anonymous" and the year to be "unknown".</p></li>
+                    <li><p>Create a method, <code>display</code> that displays the Person's name and birth year in the format "name (b. year)"</p></li>
+                </ul>
+            <p>Book:</p>
+                <ul>
+                    <li><p>Create a class for a Book that contains a title, an author (of type Person), and a publisher.</p></li>
+                    <li><p>Create an initializer for your Book class to set the default title to be "untitled", the author to be a Person, and the publisher to be "unpublished".</p></li>
+                    <li><p>Create a method, <code>display</code> that displays the Book's information as follows (don't forget to have the book display method call the author's display method):</p></li>
+
+<pre><code class="bash">
+The Great Divorce
+Publisher:
+Geoffrey Bles
+Author:
+C.S. Lewis (b. 1898)
+</code></pre>
+
+
+                </ul>
+
+                <p>
+                    Then, create a main function that does the following:
+                </p>
+
+                <ul>
+                    <li><p>Create a new book</p></li>
+                    <li><p>Call that book's display function</p></li>
+                    <li><p>Prompts the user for each of the following: author name and birth year, and the books title and publisher.</p></li>
+                    <li><p>Sets these values for the current book and it's author.</p></li>
+                    <li><p>Calls the book's display function again.</p></li>
+                </ul>
+            </p>
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+untitled
+Publisher:
+unpublished
+Author:
+anonymous (b. unknown)
+
+Please enter the following:
+Name: <span class="user-input">C.S. Lewis</span>
+Year: <span class="user-input">1898</span>
+Title: <span class="user-input">The Great Divorce</span>
+Publisher: <span class="user-input">Geoffrey Bles</span>
+
+The Great Divorce
+Publisher:
+Geoffrey Bles
+Author:
+C.S. Lewis (b. 1898)
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of classes. <strong>You must use classes</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check04a check04a.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check04a.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
