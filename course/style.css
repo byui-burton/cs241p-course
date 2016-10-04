@@ -266,3 +266,55 @@ article ul li p:before {
 	padding-left: 10px;
 }
 
+
+/*******************************
+ * Class Diagrams
+ *******************************/
+.class-diagrams {
+text-align: center;
+}
+
+.class-diagram-spacer{
+background: #EFEFEF;
+padding: 0;
+}
+
+.table-class-diagram tr.class-diagram-spacer td{
+padding: 0;
+border: 1px solid #EFEFEF;
+}
+
+.table-class-diagram{
+border: 1px solid #CCC;
+border-collapse: collapse;
+margin-left: 20px;
+margin-bottom: 10px;
+display: inline-block;
+vertical-align: top;
+text-align: left;
+font-family: Menlo, Monaco, Consolas, fixed;
+}
+
+.table-class-diagram th{
+background: #3981B2;
+color: #EFEFEF;
+text-align: center;
+padding: 5px;
+padding-top: 5px!important;
+}
+
+.table-class-diagram tr td{
+padding: 5px;
+padding-top: 5px!important;
+border-right: 1px dashed #CCC;
+}
+
+.table-class-diagram tr{
+border-bottom: 1px solid #EEE;
+}
+
+.table-class-diagram tr:last-child, .table-class-diagram tr:first-child{
+border-bottom: none;
+}
+
+

@@ -16,20 +16,108 @@
         <h2>04 Prepare : Checkpoint B</h2>
 
         <h3>Objective</h3>
-        <p></p>
+        <p>Demonstrate the use of multiple files in Python.</p>
 
         <h3>Overview</h3>
         <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
         </p>
 
         <h3>Instructions</h3>
+        <p>For this assignment, you are supplied with a file containing two working classes and a main function that tests them. Your job is to break this up into three files, one for each class and one for the main function.</p>
+
+        <h4>The File Location</h4>
+        <p>The file to begin with is found at:</p>
+
+<pre><code>
+/home/cs241/check04b.py
+</code></pre>
+
+        <p>You should create a new directory and copy it to your directory as follows:</p>
+
+<pre><code>
+mkdir check04b
+cd check04b
+
+cp /home/cs241/check04b.py .
+</code></pre>
+
+        <p>Please note the final "." in the copy command. It says, "copy it to my current directory."</p>
+
+        <h4>The File Contents</h4>
+        <p>This file contains a class for an address, and one a credit card. The credit card contains two addresses, a mailing address and a billing address. Each class also contains a display function. The main function asks the user for some basic information, populates a credit card object and displays it.</p>
+
+        <p>You should create 3 files:</p>
+        <ul>
+            <li><p>credit_card.py</p></li>
+            <li><p>address.py</p></li>
+            <li><p>main.py</p></li>
+        </ul>
+
+        <p>main.py should contain the main function and import the CreditCard class from credit_card.py. The file credit_card.py should import the address class from address.py</p>
 
         <h3>Sample Output</h3>
         <p>
             The following is an example of output for this program:
         </p>
 <pre><code class="bash">
+Name: Mary
+Number: 1234123412341234
+Mailing Address:
+Street: 123 North Str.
+City: Rexburg
+State: ID
+Zip: 83440
+Billing Address:
+Street: 456 South Str.
+City: Salt Lake City
+State: UT
+Zip: 84101
+Mary
+1234123412341234
+Mailing Address:
+123 North Str.
+Rexburg, ID 83440
+Billing Address:
+456 South Str.
+Salt Lake City, UT 84101
 </code></pre>
+
+
+        <h3>Testing and Submitting Multiple Files</h3>
+
+        <p>The testBed and submit commands are written to only accept a single file. Because of this, in order to submit, we need to combine our separate python files into a single "tar" file, which is similar to a .zip file.</p>
+
+        <p>To create a new tar file named check04b.tar with all of the files for this assignment, go to your directory and run the following command:</p>
+
+<pre><code class="bash">
+tar -cf check04b.tar main.py credit_card.py address.py
+</code></pre>
+
+        <p>Or, if we want to automatically include all the .py files in the current directory we could type:</p>
+
+<pre><code class="bash">
+tar -cf check04b.tar *.py
+</code></pre>
+
+        <p>This "creates a file" (hence, cf) with the name of whatever comes after it. Then comes a list of all the files to include. The first line above includes each of the .py files one by one, the second version (using *.py) says, include all the .py files in the current directory.</p>
+
+        <p>Please note that you MUST include the name of a tar file, if you forget and write something like this:</p>
+
+<pre><code class="bash">
+THIS IS BAD: tar -cf *.py
+</code></pre>
+
+        <p>It will assume that one of your .py files is the name that you want to use for your tar file, and overwrite it. Yikes!</p>
+
+        <p>Once you have a tar file, you can use it with testBed or submit, just like before:</p>
+
+<pre><code class="bash">
+testBed cs165new/check04b check04b.tar
+submit check04b.tar
+</code></pre>
+
+        <p>These tools will un-tar the file, and then look for a file named main.py.</p>
+
 
         <h3>Automatic Grading Script (TestBed)</h3>
         <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
@@ -39,14 +127,14 @@
         <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
 
 <pre><code class="bash">
-testBed cs241/check04b check04b.py
+testBed cs241/check04b check04b.tar
 </code></pre>
 
         <h3>Submission</h3>
         <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
 
 <pre><code class="bash">
-submit check04b.py
+submit check04b.tar
 </code></pre>
 
         <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
