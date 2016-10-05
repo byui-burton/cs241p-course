@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Team Activity</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>04 Teach : Team Activity</h2>
+
+        <h3>Objective</h3>
+        <p>Demonstrate the use of multiple classes and files in Python.</p>
+
+        <h3>Overview</h3>
+        <p>Assume you have been asked to work on the I-Learn system. One of the components of that system is to handle assignments. Each assignment has three different dates: a start date, a due date, and an end date.</p>
+
+        <p>Your task is to write a Python class for an Assignment, and another for Date. (Please note that there is a built in class for "datetime" in Python, but we are practicing creating our own classes here, so we'll just use our simple one for this example and make it ourselves.)</p>
+
+        <p>In addition, you should put each of these classes in their own file, and then another file that contains a main function to test them. Thus, you should have 3 separate files.</p>
+
+        <h3>Instructions</h3>
+
+
+
+        <h4>Class Specifications</h4>
+        <p>The following UML class diagrams define your classes:</p>
+
+        <div class="class-diagrams">
+            <table class="table-class-diagram">
+                <tr><th>Date</th></tr>
+                <tr><td>day : int</td></tr>
+                <tr><td>month : int</td></tr>
+                <tr><td>year : int</td></tr>
+                </tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>prompt()</td></tr>
+                <tr><td>display()</td></tr>
+            </table>
+
+            <table class="table-class-diagram">
+                <tr><th>Assignment</th></tr>
+                <tr><td>name : string</td></tr>
+                <tr><td>start_date : Date</td></tr>
+                <tr><td>due_date : Date</td></tr>
+                <tr><td>end_date : Date</td></tr>
+                </tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>prompt()</td></tr>
+                <tr><td>display()</td></tr>
+            </table>
+        </div>
+
+        <p>For the Date class:</p>
+        <ul>
+            <li><p>Day, month, and year all store integer values.</p></li>
+            <li><p>The __init__ function should initialize the date to January 1, 2000</p></li>
+            <li><p>The prompt function should ask for a day, month, and year value.</p></li>
+            <li><p>The display function should display the date in the format "mm/dd/yyyy"</p></li>
+        </ul>
+
+        <p>For the Assignment class:</p>
+        <ul>
+            <li><p>Name holds a string, and the start, due, and end dates all hold Dates.</p></li>
+            <li><p>The __init__ function should initialize the name to "Untitled" and the dates to empty Date objects.</p></li>
+            <li><p>The prompt function should ask for a name, then each of the three dates in turn. (Don't forget to make use of the date class methods here.)</p></li>
+            <li><p>The display function should display the name and each of the dates (don't forget to make use of the date class methods here.)</p></li>
+        </ul>
+
+        <h3>Core Requirements</h3>
+        <ol>
+            <li><p>Create a Date class in a file date.py with the above variables and methods.</p></li>
+            <li><p>Create an Assignment class in a file assignment.py with the above variables and methods. Have it import the Date class from the date.py file.</p></li>
+            <li><p>Create a main function in a file main.py that creates a new Assignment, prompts for its values and display them. Have it import the Assignment class from the assignment.py file. Then, tar up your files and ensure that your solution passes testBed. (See the instructions for <a href="./checkb.html">Check04B</a> for more information.)</p></li>
+        </ol>
+
+
+        <h4>Sample Output</h4>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Name: Robot Project
+
+Start Date:
+Day: 4
+Month: 10
+Year: 2016
+
+Due Date:
+Day: 7
+Month: 10
+Year: 2016
+
+End Date:
+Day: 21
+Month: 10
+Year: 2016
+
+Assignment: Robot Project
+Start Date:
+10/4/2016
+Due Date:
+10/7/2016
+End Date:
+10/21/2016
+
+</code></pre>
+
+        <h4>Running TestBed</h4>
+        <p>Because TestBed only accepts a single file to run on, we need to tar up our files together and submit the resulting .tar file. See the instructions for <a href="./checkb.html">Check04B</a> for more information.</p>
+
+        <p>The following commands may come in handy:</p>
+<pre><code class="bash">
+tar -cf ta04.tar *.py
+testBed cs241/ta04 ta04.tar
+</code></pre>
+
+    <p>Notice that is NOT:</p>
+
+<pre><code class="bash">
+tar -cf *.py  # This is BAD
+</code></pre>
+
+        <h3>Stretch Challenges</h3>
+        <p>After finishing the core requirements, help everyone on your larger team complete them. When everyone has completed the core requirements, please move on to these stretch challenges.</p>
+
+        <ol>
+            <li><p>Detect if a user enters an invalid month (not 1-12) or a year before 2000 and reprompt them. (We won't worry about days at this point...)</p></li>
+            <li><p>Change the display function for dates so that months and days are always two digits (e.g. 01/02/2000 instead of 1/2/2000).</p></li>
+            <li><p>Create a display_long function for dates to display them in long format: January 01, 2000 (instead of 01/01/2000)</p></li>
+<!--             <li><p>Add an additional display function (display_title()) for the Assignment class that only displays the name, along with the due date in long form: "My Assignment (Due: January 01, 2001)"</p></li>
+ -->        </ol>
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week04/ta04-solution/" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+        <h3>Submission</h3>
+        <p>When you have finished this activity, please fill out the assessment in I-Learn. You are welcome to complete any additional parts of this activity by yourself or with others after class before submitting the assessment.</p>
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
