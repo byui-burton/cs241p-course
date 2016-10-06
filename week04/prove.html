@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>04 Prove : Assignment</h2>
+
+        <h3>Overview</h3>
+        <p>This assignment will give you practice using classes in Python to model and e-commerce system with Customers, Orders, and Products.</p>
+
+        <h3>Specification</h3>
+        <p>For this program you will write separate classes for a Customer, Order, and Product. These classes should be in their own files and will therefore need to be combined into a .tar file to submit.</p>
+
+        <p>You will be provided with a main.py file that will test the properties and methods of your classes. This concept of having a file that tests each component in individually is called unit testing. It allows the developer of a library (you in this case) to feel confident that the classes that have been created are working correctly.</p>
+
+        <p>The main method will assume the classes exist as follows:</p>
+
+        <div class="class-diagrams">
+            <table class="table-class-diagram">
+                <tr><th>Product</th></tr>
+                <tr><td>id : string</td></tr>
+                <tr><td>name : string</td></tr>
+                <tr><td>quantity : int</td></tr>
+                <tr><td>price : float</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>__init__(id, name, quantity, price)</td></tr>
+                <tr><td>get_total_price()</td></tr>
+                <tr><td>display()</td></tr>
+            </table>
+
+            <table class="table-class-diagram">
+                <tr><th>Order</th></tr>
+                <tr><td>id : string</td></tr>
+                <tr><td>products : Product[]</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>get_subtotal()</td></tr>
+                <tr><td>get_tax()</td></tr>
+                <tr><td>get_total()</td></tr>
+                <tr><td>display_receipt()</td></tr>
+            </table>
+            <table class="table-class-diagram">
+                <tr><th>Customer</th></tr>
+                <tr><td>id : string</td></tr>
+                <tr><td>name : string</td></tr>
+                <tr><td>orders : Order[]</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>get_order_count()</td></tr>
+                <tr><td>get_total()</td></tr>
+                <tr><td>display_summary()</td></tr>
+                <tr><td>display_receipts()</td></tr>
+            </table>
+        </div>
+
+        <h4>Method Specification</h4>
+        <p>The following describes the expected behavior of each of the above methods:</p>
+
+<ul>
+    <li><p>Product</p></li>
+        <ul>
+            <li><p>init - Initializes to id="", name="", price=0, quantity=0</p></li>
+            <li><p>init - Initializes to the values that were passed</p></li>
+            <li><p>get_total_price - Returns the price multiplied by the quantity</p></li>
+        </ul>
+
+    <li><p>Order</p></li>
+        <ul>
+            <li><p>init - Initializes to id="", and products to an empty list []</p></li>
+            <li><p>get_subtotal - Sums the price of each product and returns it</p></li>
+            <li><p>get_tax - Returns 6.5% times the subtotal</p></li>
+            <li><p>get_total - Returns the subtotal plus the tax</p></li>
+            <li><p>display_receipt - Displays a receipt in the format:</p></li>
+
+<pre><code class="bash">
+Order: 1138
+$2.67 - Pencils
+$10.99 - Notebook
+Subtotal: $xx.xx
+Tax: $xx.xx
+Total: $xx.xx
+</code></pre>
+
+        </ul>
+
+    <li><p>Customer</p></li>
+        <ul>
+            <li><p>init - Initializes to id="", name="", and orders to an empty list</p></li>
+            <li><p>get_order_count - Returns the number of orders</p></li>
+            <li><p>get_total - Returns the total price of all orders combined</p></li>
+            <li><p>display_summary - Displays a summary as follows:</p></li>
+<pre><code class="bash">
+Summary for customer '123abc':
+Name: Andrew Scott
+Orders: 2
+Total: $153.27    
+</code></pre>            
+            <li><p>display_receipts - Displays all the orders' receipts as follows:</p></li>
+<pre><code class="bash">
+Detailed receipts for customer '123abc':
+Name: Andrew Scott
+
+Order: 1138
+$2.67 - Pencils
+$10.99 - Notebook
+Subtotal: $xx.xx
+Tax: $xx.xx
+Total: $xx.xx
+
+Order: 3921
+$2.99 - Bread
+$2.12 - Milk
+$2.49 - Butter
+Subtotal: $xx.xx
+Tax: $xx.xx
+Total: $xx.xx
+</code></pre>            
+        </ul>
+    </ul>
+
+        <p>All dollar amounts should be displayed to two decimals.</p>
+
+
+
+<!--         <h3>Expected Output</h3>
+        <p>The following demonstrates the expected output of the program:</p>
+ -->
+
+
+        <h4>Syntax Reminders and Hints</h4>
+        <p>The following may come in handy in this assignment:</p>
+
+        <ul>
+            <li><p>Creating an empty list: <code>my_list = []</code></p></li>
+            <li><p>Appending an item to a list: <code>my_list.append(item)</code></p></li>
+            <li><p>Creating a tar file: <code>tar -cf assign04.tar *.py</code></p></li>
+<!--             <li><p></p></li>
+ -->        </ul>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>To assist you in your development, an automated test script is provided. Please keep in mind, that unlike checkpoints, your program will also be evaluated for code quality and correctness.</p>
+
+        <p>Because the main.py file is provided for you, it should match the testBed as soon as you fill in each of your classes and methods appropriately.</p>
+
+<pre><code class="bash">
+tar -cf assign04.tar *.py
+testBed cs241/assign04 assign04.tar
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename. Example:</p>
+
+<pre><code class="bash">
+submit assign04.tar
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+    </article>
+
+</body>
+
+</html>
