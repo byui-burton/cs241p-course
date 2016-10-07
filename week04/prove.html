@@ -23,6 +23,15 @@
 
         <p>You will be provided with a main.py file that will test the properties and methods of your classes. This concept of having a file that tests each component in individually is called unit testing. It allows the developer of a library (you in this case) to feel confident that the classes that have been created are working correctly.</p>
 
+        <p>The main.py file is found at /home/cs241/assign04/main.py and can be copied to your directory as follows:</p>
+
+<pre><code class="bash">
+mkdir assign04
+cd assign04
+
+cp /home/cs241/assign04/main.py .
+</code></pre> 
+
         <p>The main method will assume the classes exist as follows:</p>
 
         <div class="class-diagrams">
@@ -30,11 +39,10 @@
                 <tr><th>Product</th></tr>
                 <tr><td>id : string</td></tr>
                 <tr><td>name : string</td></tr>
-                <tr><td>quantity : int</td></tr>
                 <tr><td>price : float</td></tr>
+                <tr><td>quantity : int</td></tr>
                 <tr class='class-diagram-spacer'><td></td></tr>
-                <tr><td>__init__()</td></tr>
-                <tr><td>__init__(id, name, quantity, price)</td></tr>
+                <tr><td>__init__(id, name, price, quantity)</td></tr>
                 <tr><td>get_total_price()</td></tr>
                 <tr><td>display()</td></tr>
             </table>
@@ -48,6 +56,7 @@
                 <tr><td>get_subtotal()</td></tr>
                 <tr><td>get_tax()</td></tr>
                 <tr><td>get_total()</td></tr>
+                <tr><td>add_product(product)</td></tr>
                 <tr><td>display_receipt()</td></tr>
             </table>
             <table class="table-class-diagram">
@@ -59,6 +68,7 @@
                 <tr><td>__init__()</td></tr>
                 <tr><td>get_order_count()</td></tr>
                 <tr><td>get_total()</td></tr>
+                <tr><td>add_order()</td></tr>
                 <tr><td>display_summary()</td></tr>
                 <tr><td>display_receipts()</td></tr>
             </table>
@@ -70,9 +80,13 @@
 <ul>
     <li><p>Product</p></li>
         <ul>
-            <li><p>init - Initializes to id="", name="", price=0, quantity=0</p></li>
             <li><p>init - Initializes to the values that were passed</p></li>
             <li><p>get_total_price - Returns the price multiplied by the quantity</p></li>
+            <li><p>display - Displays the products name, quantity, and total price in the following format:</p></li>
+<pre><code class="bash">
+Pencil (10) - $12.90
+</code></pre>
+
         </ul>
 
     <li><p>Order</p></li>
@@ -81,15 +95,16 @@
             <li><p>get_subtotal - Sums the price of each product and returns it</p></li>
             <li><p>get_tax - Returns 6.5% times the subtotal</p></li>
             <li><p>get_total - Returns the subtotal plus the tax</p></li>
+            <li><p>add_product - Adds the provided product to the list</p></li>
             <li><p>display_receipt - Displays a receipt in the format:</p></li>
 
 <pre><code class="bash">
 Order: 1138
-$2.67 - Pencils
-$10.99 - Notebook
-Subtotal: $xx.xx
-Tax: $xx.xx
-Total: $xx.xx
+Sword (10) - $18999.90
+Shield (6) - $5938.50
+Subtotal: $2889.74
+Tax: $187.83
+Total: $3077.57
 </code></pre>
 
         </ul>
@@ -99,32 +114,32 @@ Total: $xx.xx
             <li><p>init - Initializes to id="", name="", and orders to an empty list</p></li>
             <li><p>get_order_count - Returns the number of orders</p></li>
             <li><p>get_total - Returns the total price of all orders combined</p></li>
+            <li><p>add_order - Adds the provided order to the list of orders</p></li>
             <li><p>display_summary - Displays a summary as follows:</p></li>
 <pre><code class="bash">
-Summary for customer '123abc':
-Name: Andrew Scott
-Orders: 2
-Total: $153.27    
+Summary for customer 'aa32':
+Name: Gandalf
+Orders: 1
+Total: $3077.57
 </code></pre>            
             <li><p>display_receipts - Displays all the orders' receipts as follows:</p></li>
 <pre><code class="bash">
-Detailed receipts for customer '123abc':
-Name: Andrew Scott
+Detailed receipts for customer 'aa32':
+Name: Gandalf
 
 Order: 1138
-$2.67 - Pencils
-$10.99 - Notebook
-Subtotal: $xx.xx
-Tax: $xx.xx
-Total: $xx.xx
+Sword (10) - $18999.90
+Shield (6) - $5938.50
+Subtotal: $2889.74
+Tax: $187.83
+Total: $3077.57
 
-Order: 3921
-$2.99 - Bread
-$2.12 - Milk
-$2.49 - Butter
-Subtotal: $xx.xx
-Tax: $xx.xx
-Total: $xx.xx
+Order: 1277182
+The Ring (1) - $1000000.00
+Wizard Staff (3) - $599.97
+Subtotal: $1000199.99
+Tax: $65013.00
+Total: $1065212.99
 </code></pre>            
         </ul>
     </ul>
@@ -133,10 +148,69 @@ Total: $xx.xx
 
 
 
-<!--         <h3>Expected Output</h3>
+         <h3>Expected Output</h3>
         <p>The following demonstrates the expected output of the program:</p>
- -->
 
+<pre><code class="bash">
+### Testing Products ###
+Id: 1238223
+Name: Sword
+Price: 1899.99
+Quantity: 10
+Sword (10) - $18999.90
+
+Id: 838ab883
+Name: Shield
+Price: 989.75
+Quantity: 6
+Shield (6) - $5938.50
+
+### Testing Orders ###
+Order: 1138
+Sword (10) - $18999.90
+Shield (6) - $5938.50
+Subtotal: $2889.74
+Tax: $187.83
+Total: $3077.57
+
+### Testing Customers ###
+Summary for customer 'aa32':
+Name: Gandalf
+Orders: 1
+Total: $3077.57
+
+Detailed receipts for customer 'aa32':
+Name: Gandalf
+
+Order: 1138
+Sword (10) - $18999.90
+Shield (6) - $5938.50
+Subtotal: $2889.74
+Tax: $187.83
+Total: $3077.57
+
+Summary for customer 'aa32':
+Name: Gandalf
+Orders: 2
+Total: $1068290.56
+
+Detailed receipts for customer 'aa32':
+Name: Gandalf
+
+Order: 1138
+Sword (10) - $18999.90
+Shield (6) - $5938.50
+Subtotal: $2889.74
+Tax: $187.83
+Total: $3077.57
+
+Order: 1277182
+The Ring (1) - $1000000.00
+Wizard Staff (3) - $599.97
+Subtotal: $1000199.99
+Tax: $65013.00
+Total: $1065212.99
+</code></pre>
 
         <h4>Syntax Reminders and Hints</h4>
         <p>The following may come in handy in this assignment:</p>
