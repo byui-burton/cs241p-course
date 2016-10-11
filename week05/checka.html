@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>05 Prepare : Checkpoint A</h2>
+
+        <h3>Objective</h3>
+        <p>This assignment will give you practice writing event handling methods to advance a ship in two dimensional space.</p>
+
+        <h3>Overview</h3>
+        <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+        <p>For this exercise, you will create a class that models a ship flying around in a 2-D plain (containing an x and y coordinate). A game class is provided to you that will help you call methods to advance and "draw" it.</p>
+
+        <h3>Instructions</h3>
+
+            <p>Write a class for a ship that has integer x and y coordinates, and also stores the components of its velocity, dx and dy. (Please note that will will have similar elements in our weekly assignment, where we will break them into separate classes, but for this assignment, you can store all four as member variables of your ship class.</p>
+
+            <p>The ship should have two methods, one for advance, and one for draw. The advance method should move the ship forward one unit in time. This is accomplished by adding dx onto x, and dy onto y. This draw method should output, "Drawing the ship at (x, y)" where x and y represent the current location of the ship. The __init__ method for the ship should initialize x, y, dx, and dy to 0.</p>
+
+            <p>For this assignment, the provided main function will set the velocity of the ship when it is created, and the velocity will remain constant for the rest of that run.</p>
+
+            <p>The following UML class diagram defines your ship class:</p>
+
+            <div class="class-diagrams">
+                <table class="table-class-diagram">
+                    <tr><th>Ship</th></tr>
+                    <tr><td>x : int</td></tr>
+                    <tr><td>y : int</td></tr>
+                    <tr><td>dx : int</td></tr>
+                    <tr><td>dy : int</td></tr>
+                    <tr class='class-diagram-spacer'><td></td></tr>
+                    <tr><td>__init__()</td></tr>
+                    <tr><td>advance()</td></tr>
+                    <tr><td>draw()</td></tr>
+                </table>
+            </div>
+
+            <p>To go with your ship class, you will be provided with a Game class and a main function. The Game class has a ship, and two important functions, on_draw() and animate(). In your the on_draw function, you simply need to call the ship's draw function. In the animate function, you simply need to call the ship's advance function. Nothing else in the Game class is required of you.</p>
+
+            <p>In addition, nothing is required from you in the main function. It can be left as provided. You can obtain the provided code from: /home/cs241/check05a.py with the following command:</p>
+
+<pre><code class="bash">
+cp /home/cs241/check05a.py .
+</code></pre>
+
+            <p>Finally, for simplicity, for this assignment you may include all of your classes in the same file if you would like.</p>
+
+            <h4>Instructions Recap</h4>
+            <p>Thus, in short, for this checkpoint, you need to do the following.</p>
+
+                <ul>
+                    <li><p>Create a Ship class</p></li>
+                    <li><p>Create an __init__ method that sets x, y, dx, and dy to 0.</p></li>
+                    <li><p>Create a draw method that prints the text, "Drawing ship at (x, y)".</p></li>
+                    <li><p>Create an advance method that adds dx to x, and dy to y.</p></li>
+                    <li><p>In the Game class on_draw method, call your ship's draw method.</p></li>
+                    <li><p>In the Game class animate method, call your ship's advance method.</p></li>
+                </ul>
+            </p>
+
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Enter a random seed: cat
+Starting the ship with velocity (-1, 3)
+Drawing ship at (-1, 3)
+Drawing ship at (-2, 6)
+Drawing ship at (-3, 9)
+Drawing ship at (-4, 12)
+Drawing ship at (-5, 15)
+Drawing ship at (-6, 18)
+Drawing ship at (-7, 21)
+Drawing ship at (-8, 24)
+Drawing ship at (-9, 27)
+Drawing ship at (-10, 30)
+Drawing ship at (-11, 33)
+Drawing ship at (-12, 36)
+Drawing ship at (-13, 39)
+Drawing ship at (-14, 42)
+Drawing ship at (-15, 45)
+Drawing ship at (-16, 48)
+Drawing ship at (-17, 51)
+Drawing ship at (-18, 54)
+Drawing ship at (-19, 57)
+Drawing ship at (-20, 60)    
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of classes. <strong>You must use classes</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check05a check05a.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check05a.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
