@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>05 Prepare : Checkpoint B</h2>
+
+        <h3>Objective</h3>
+        <p>Practice using an IDE / debugger.</p>
+
+        <p>You are encouraged with work with others for this checkpoint.</p>
+
+        <h3>Overview</h3>
+        <p>After completing (or <i>while</i> completing) the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+        <p>For this exercise, you will practice using PyCharm to debug a program. Unlike other checkpoints, you will not submit any code, but rather, will indicate your progress via the quiz in I-Learn.</p>
+
+        <p>Please recognize that the purpose of this assignment is to help you learn about a tool that will make your life easier in the coming assignments. You should view it as a tutorial to get you started, not as a series of steps to check off to get credit.</p>
+
+        <h3>Instructions</h3>
+
+        <h4>Running the file</h4>
+        <ol>
+
+            <li><p>Follow the installation instructions from the preparation material to install Python 3.5, the Arcade library, and PyCharm on your own system.</p></li>
+
+            <li><p>Create a new Python project in PyCharm. Ensure that it is using at least version 3.5.</p></li>
+
+            <li><p>Create a new Python file in your project named, check05b.py. Copy and paste the contents of the <a href="https://github.com/byui-burton/cs241p-course/blob/master/week05/check05b.py" target="_BLANK">check05b.py starting template</a>.</p></li>
+
+            <li><p>Ensure that you can view the files in your project in the "Project Window". You may need to turn this on, via "View -> Tool Windows -> Project" or something similar.</p></li>
+
+            <li><p>Right click the name of your file in the project window and select "Run check05.py".</p></li>
+
+            <li><p>Ensure that you can see the output of the file in an output window.</p></li>
+
+        </ol>
+
+        <h4>Breakpoints and stepping over code</h4>
+        <ol>
+
+            <li><p>Scroll down to the main function. Find the line where account2 is displayed for the first time. Create a breakpoint on this line by clicking in the left margin. This should show a red circle. A breakpoint will stop the program at that point, and allow you to inspect variables.</p></li>
+
+            <li><p>Run your code again, because you have done this once already, you can simply click the green play button on the tool bar (or look in the "Run" menu). At this point it should <em>not</em> stop at the breakpoint, because you are "running it". Ensure that you still see six dollar amounts in the output.</p></li>
+            
+            <li><p>This time, run your program in debug mode by clicking the icon of the "bug" next to the play button (or look in the "Run" menu). This time it should change the window layout slightly and highlight the line that will display account2. It will also change the output window to a Debugger view. Select the "Console" to see the output. Ensure that you only see one dollar amount now (because the program is stopped at the breakpoint before going on to the second one.</p></li>
+            
+            <li><p>Allow the program to run one more step by clicking the "Step Over" button. You will need to mouse over several of the different arrows to find which icon corresponds to step over. Ensure that the second account is displayed.</p></li>
+
+            <li><p>Continue clicking the step over button, and watch your program run one step at a time. When you are ready for it to start running normally (to finish the program), click the "Resume Program" button.</p></li>
+
+            <li><p>Clear your breakpoint, by clicking on it (the red circle should go away).</p></li>
+        </ol>
+
+        <h4>Stepping into and out of functions</h4>
+        <ol>
+
+            <li><p>In the main function, find the line that adds 20 cents to account 1. Put a breakpoint on that line, and debug the program ensuring that it stops at that point.</p></li>
+
+            <li><p>This time, instead of stepping over that line of code, we will step <em>into</em> that function to see what it is doing. Find and click the arrow that corresponds to "Step Into My Code" and click it. The program should now take you to the add_cents method of the Money class.</p></li>
+
+            <li><p>Click the step over button to step over these lines of code until you are back to the main function again and on to the line where 20 cents are added to account2. Click "Step Into My Code" again to go into the method.</p></li>
+
+            <li><p>This time, rather than stepping through each line of code to get back to main, find and click the "Step Out" button. This finishes the method and resumes code back in main.</p></li>
+
+            <li><p>Continue playing around with stepping into and out of functions until you feel comfortable with it. Make sure that you can step all the way into the "check_overflow" method.</p></li>
+
+        </ol>
+
+        <h4>Inspecting variables</h4>
+        <ol>
+
+            <li><p>Once again, set a breakpoint on the line of code in main that will add 20 cents to account1 and debug to this point.</p></li>
+            
+            <li><p>This time, instead of looking at the "Console" window, look at the "Debugger" window that shows variables.</p></li>
+
+            <li><p>In the variables window, find the account1 variable, and click the arrow next to it to expand it. This should show the current dollars and cents value.</p></li>
+
+            <li><p>Now step over that line of code and notice the change to the dollar and cents.</p></li>
+
+            <li><p>Next, step into the add_cents method for account2. Notice that the variables window has changed. It should now show two variables "cents" (the parameter) and "self" the current object. Expand out the "self" variable to see its member variables.</p></li>
+            
+            <li><p>Step over the lines of code to see their effect on the member variables.</p></li>
+
+            <li><p>Repeat this process for adding the 20 cents to account3.</p></li>
+
+            <li><p>Continue playing around with inspecting variables until you feel comfortable with it.</p></li>
+
+        </ol>
+
+        <h3>Tracking down a bug</h3>
+        <p>As you may have noticed this code has a bug in it. The account3 balance has 99.99 cents at the start. Then, 20 cents are added and the final balance is 99.19, not 100.19 as it should be.</p>
+
+        <p>Use your new debugging skills to step into the add_cents method for account3 and keep an eye on the variables to see if you can find what the bug is. Then, fix the bug, walk through the code and make sure everything looks correct.</p>
+
+        <h3>Submission</h3>
+        <p>For this assignment, you will not submit any code to the Linux system like you normally do. Instead, please answer the questions in the accompanying I-Learn quiz.</p>
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
