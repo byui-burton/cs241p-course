@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <img class="logo" src="../course/byui.png" />
+    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>05 Prove : Data Structures Homework</h2>
+
+        <h3>Overview</h3>
+
+        <p>The accompanying I-Learn quiz has a few questions about the operation of stacks, and then refers to a programming assignment.</p>
+
+        <h3>Programming Assignment Instructions</h3>
+
+        <p>Write a program that will read in a file containing three kinds of braces: { }, ( ), and [ ]. Your program should display either "Balanced" or "Not balanced". To be balanced, a file must contain the same number of open braces as closed braces, and they must be closed in the reverse order of how they were opened. You should ignore all whitespace.</p>
+
+        <p>The following are examples of balanced braces:</p>
+<pre><code class="bash">
+{ ( [ ] ) }
+
+{ }
+
+[ [ [ ( ) ] ] ]
+</code></pre>
+
+        <p>The following are examples of braces that are not balanced:</p>
+<pre><code class="bash">
+{ ( [
+
+{ [ } ]
+
+[ ] ] [
+</code></pre>
+
+        <h4>Getting Started</h4>
+        <p>We will begin the program together in class. You can start with the file we create by copying it to your current directory:
+
+<pre><code class="bash">
+cp /home/cs241/stacks05/braces.py .
+</code></pre>
+
+        <h4>TestBed and Submission</h4>
+        <p>An automated TestBed script is provided for you. It will test your program on 6 different files.</p>
+
+<pre><code class="bash">
+testBed cs241/stacks05 braces.py
+</code></pre>
+
+        <p>These files should have the following results:</p>
+        <ul>
+            <li><code>stacks01.txt</code> - Not balanced</li>
+            <li><code>stacks02.txt</code> - Balanced</li>
+            <li><code>stacks03.txt</code> - Balanced</li>
+            <li><code>stacks04.txt</code> - Not balanced</li>
+            <li><code>stacks05.txt</code> - Not balanced</li>
+            <li><code>stacks06.txt</code> - Balanced</li>
+        </ul>
+
+        <p>You will not submit your program for grading, instead take the accompanying I-Learn quiz to report on your progress and your understand of stacks.</p>
+
+        <p>You are encouraged to work with others on the programming and the quiz.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
