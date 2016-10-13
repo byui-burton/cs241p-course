@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>05 Prove : Assignment</h2>
+
+        <h3>Overview</h3>
+        <p>Use your knowledge of object-oriented programming to write a one-player Pong game in Python.</p>
+
+        <h3>Instructions</h3>
+        <h4>Configure your system</h4>
+        <p>Before starting on the program, refer to the <a href="./prepare.html" target="_BLANK">preparation material</a> for this week about getting the arcade library set up and configured on your system.</p>
+
+        <h4>Specification</h4>
+        <p>For this project you will recreate a simple version of the classic Pong arcade game.</p>
+
+        <p>The following are the basic specifications:</p>
+
+        <ul>
+            <li><p>The ball should bounce along the top, left, and bottom edges of the screen. If it goes of the right side of the screen, it should be lost.</p></li>
+            <li><p>If the ball hits the paddle, it should bounce.</p></li>
+            <li><p>The paddle should be on the right edge of the screen and move up and down with the arrow keys. It should not be able to move off the screen.</p></li>
+            <li><p>The left and right arrow keys should move the paddle down and up. They should be able to be held down.</p></li>
+            <li><p>At the start of the game, and after the ball is lost, it should start at a random location along the left edge of the screen, and with a random velocity (choose values that seem appropriate to you).</p></li>
+            <li><p>The user is awarded 1 point for every time they hit the ball with the paddle. They lose 5 points for every time they miss.</p></li>
+
+
+        </ul>
+        <p>In addition, use the following values:</p>
+
+        <ul>
+
+            <li><p>The screen is 400 pixels wide by 300 pixels high.</p></li>
+            <li><p>The ball radius is 10.</p></li>
+            <li><p>The paddle is 10 pixels wide by 50 pixels high. Each move of the paddle should be by 5 pixels.</p></li>
+
+<!--             <li><p></p></li>
+            <li><p></p></li>
+ -->            
+        </ul>
+
+        <h4>Object-oriented Design</h4>
+
+        <p>To help break the problem down into meaningful, cohesive pieces, we can create a number of classes to represent the elements of the game.</p>
+
+        <p>In future projects, you will be responsible to determine the classes needed, but to help you get started on this project, we will work from the same design. In addition, one of the benefits of encapsulation is the ability to define a class interface and then have different people working independently on the different classes.</p>
+
+        <p>In some sections of this course, students will work in pairs. But for our section, you will work in a pair <em>with the instructor</em>. I will provide a Pong class to represent the game and the rules. This Pong class will assume the existence of a Ball, Paddle, Point, and Velocity class as follows:</p>
+
+
+        <div class="class-diagrams">
+            <table class="table-class-diagram">
+                <tr><th>Point</th></tr>
+                <tr><td>x : float</td></tr>
+                <tr><td>y : float</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+            </table>
+            <table class="table-class-diagram">
+                <tr><th>Velocity</th></tr>
+                <tr><td>dx : float</td></tr>
+                <tr><td>dy : float</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+            </table>
+
+            <table class="table-class-diagram">
+                <tr><th>Ball</th></tr>
+                <tr><td>center : Point</td></tr>
+                <tr><td>velocity : Velocity</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>draw()</td></tr>
+                <tr><td>advance()</td></tr>
+                <tr><td>bounce_horizontal()</td></tr>
+                <tr><td>bounce_vertical()</td></tr>
+                <tr><td>restart()</td></tr>
+            </table>
+
+            <table class="table-class-diagram">
+                <tr><th>Paddle</th></tr>
+                <tr><td>center : Point</td></tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+                <tr><td>draw()</td></tr>
+                <tr><td>move_up()</td></tr>
+                <tr><td>move_down()</td></tr>
+            </table>
+        </div>
+
+        <p>The provided Pong class will handle all the user input and call the methods of the above classes at the appropriate times. Your task is to implement these classes and methods.</p>
+
+        <p>You may download the code to start with here: <a href="https://github.com/byui-burton/cs241p-course/tree/master/week05/pong.py" target="_BLANK">pong.py</a>. You are welcome to change any of the provided code (and encouraged to add additional "cool" elements to the game play) but you should not need to change anything to achieve the basic functionality.</p>
+
+        <p>For simplicity, for this first graphics assignment, you are welcome to put all of your classes in the same .py file.</p>
+
+        <h4>Code hints and suggestions</h4>
+        <ul>
+            <li><p>Start by creating all the classes you need with the correct data members and blank methods. Then you can go through and fill in the methods one by one.</p></li>
+            <li><p>You can get a random float from a range as follows:</p></li>
+
+<pre><code class="python">
+import random
+
+...
+
+random.uniform(-2, 2)
+</code></pre>
+
+            <li><p>You are encouraged to work together and help one another on this assignment!</p></li>
+        </ul>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>There is not automated test script for this assignment.</p>
+
+        <h3>Submission</h3>
+        <p><strong>This is different:</strong> Instead of copying your python file to the Linux system and submitting it there. Please upload it to the I-Learn assignment.</p>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+    </article>
+
+</body>
+
+</html>
