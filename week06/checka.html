@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>06 Prepare : Checkpoint A</h2>
+
+        <h3>Overview</h3>
+        <p>
+            This checkpoint is intended to help you practice the syntax of basic inheritance.
+        </p>
+
+        <p>In looking at the collection of books next to your bed, you notice that they fall into a few different categories. First, you have your regular books and novels, second, your textbooks, and finally, your collection of picture books :-).</p>
+
+        <p>You quickly recognize that they all have many things in common, but there are some slight differences in the properties of these different kinds of books.</p>
+
+        <p>In particular, all books seem to have the following:
+            <ul>
+                <li><p>title : string</p></li>
+                <li><p>author : string</p></li>
+                <li><p>publicationYear : int</p></li>
+            </ul>
+        </p>
+
+        <p>That information captures your regular books and novels fairly well, and yet your textbooks also have a subject they belong to, such as Math, Physics, Computer Science, etc.:
+            <ul>
+                <li><p>subject : string</p></li>
+            </ul>
+        </p>
+        <p>Finally, your picture books contain all the information of a regular book, but in addition to an author, they also have an illustrator.
+            <ul>
+                <li><p>illustrator : string</p></li>
+            </ul>
+        </p>
+
+        <p>You decide this sounds like a perfect opportunity to practice your new inheritance skills, because you could create a base class for a <code>Book</code>, a derived class <code>TextBook</code> that extends a <code>Book</code>, and another derived class <code>PictureBook</code> that also extends <code>Book</code>.</p>
+
+        <h3>Instructions</h3>
+
+        <p>For this assignment, because the classes we are going to create are so small and simplistic, and to help you focus on just the elements of inheritance, rather than the mechanics of creating lots of files, you will put all of your classes at the top of the main file, rather than creating separate files for each class, like we would for larger, real-world projects.</p>
+
+            <ol>
+<!--                 <li>Copy the template file /home/cs241/check06a.cpp to your working directory.</li>
+ -->                
+                <li><p>Create a class for a <code>Book</code> that has the following member variables:</p>
+                    <ul>
+                        <li><p>title : string</p></li>
+                        <li><p>author : string</p></li>
+                        <li><p>publicationYear : int</p></li>
+                    </ul>
+                </li>
+
+                <li><p>Next, create a class for a <code>TextBook</code> that extends a <code>Book</code> and adds the following member variable:</p>
+                    <ul>
+                        <li><p>subject : string</p></li>
+                    </ul>
+                </li>
+
+                <li><p>Finally, create a class for a <code>PictureBook</code> that that extends a <code>Book</code> and adds the following member variable:</p>
+                    <ul>
+                        <li><p>illustrator : string</p></li>
+                    </ul>
+                </li>
+
+                <li><p>In the base <code>Book</code> class, create a method <code>promptBookInfo</code> that prompts the user for the title, author, and publicationYear, and also a method <code>displayBookInfo</code> that displays the title, author and publication year in the format: "Title (publicationYear) by Author".</p></li>
+
+                <li><p>In the <code>TextBook</code> class, create methods <code>promptSubject</code> and <code>displaySubject</code> that prompt and display the subject of the book.</p></li>
+
+                <li><p>In the <code>PictureBook</code> class, create methods <code>promptIllustrator</code> and <code>displayIllustrator</code> that prompt and display the Illustrator of the book.</p></li>
+
+                <li><p>In <code>main</code>, first create a <code>Book</code> object and call the following methods:</p>
+                    <ol>
+                        <li><p>promptBookInfo</p></li>
+                        <li><p>displayBookInfo</p></li>
+                    </ol>
+                </li>
+
+                <li><p>Next, create a <code>TextBook</code> object and call the following methods:</p>
+                    <ol>
+                        <li><p>promptBookInfo</p></li>
+                        <li><p>promptSubject</p></li>
+                        <li><p>displayBookInfo</p></li>
+                        <li><p>displaySubject</p></li>
+                    </ol>
+                </li>
+
+                <li><p>Finally, create a <code>PictureBook</code> object and call the following methods:</p>
+                    <ol>
+                        <li><p>promptBookInfo</p></li>
+                        <li><p>promptIllustrator</p></li>
+                        <li><p>displayBookInfo</p></li>
+                        <li><p>displayIllustrator</p></li>
+                    </ol>
+                </li>
+
+            </ol>
+
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Title: <span class="user-input">The Miracle of Forgiveness</span>
+Author: <span class="user-input">Spencer W. Kimball</span>
+Publication Year: <span class="user-input">1969</span>
+
+The Miracle of Forgiveness (1969) by Spencer W. Kimball
+
+Title: <span class="user-input">Introduction to C++</span>
+Author: <span class="user-input">James Helfrich</span>
+Publication Year: <span class="user-input">2012</span>
+Subject: <span class="user-input">Computer Science</span>
+
+Introduction to C++ (2012) by James Helfrich
+Subject: Computer Science
+
+Title: <span class="user-input">Click, Clack, Moo</span>
+Author: <span class="user-input">Doreen Cronin</span>
+Publication Year: <span class="user-input">2000</span>
+Illustrator: <span class="user-input">Betsy Lewin</span>
+
+Click, Clack, Moo (2000) by Doreen Cronin
+Illustrated by Betsy Lewin
+</code></pre>
+
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of inheritance. <strong>You must use inheritance</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check06a check06a.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check06a.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
