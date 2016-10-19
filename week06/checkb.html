@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>06 Prepare : Checkpoint B</h2>
+
+        <h3>Overview</h3>
+        <p>This checkpoint is intended to help you practice the syntax of inheritance, specifically, the syntax of calling methods from a base class.</p>
+
+
+        <p>You are to write a program to track cell phones. You determine that there are two types of cell phones, traditional phones that have a phone number, and smart phones, that have a phone number, but also contain an email address.</p>
+
+        <h3>Instructions</h3>
+        <p>Write a class <code>Phone</code> contains a phone number, and then a class <code>SmartPhone</code> that extends the Phone class to add an email address, according to the following:</p>
+
+        <ol>
+            <li><p>The <code>Phone</code> class should contain three integers for the different parts of a phone number. Here is its class diagram:</p></li>
+
+                <div class="class-diagrams">
+                    <table class="table-class-diagram">
+                        <tr><th>Phone</th></tr>
+                        <tr><td>area_code : int</td></tr>
+                        <tr><td>prefix : int</td>
+                        <tr><td>suffix : int</td>
+                        </tr>
+                        <tr class='class-diagram-spacer'><td></td></tr>
+                        <tr><td>promptNumber() : void</td></tr>
+                        <tr><td>display() : void</td></tr>
+                    </table>
+                </div>
+
+            
+            <li><p>The <code>promptNumber</code> method of the <code>Phone</code> class should ask the user to enter each element of a phone number.</p></li>
+
+            <li><p>The <code>display</code> method of the <code>Phone</code> class should display the number in the format "(areaCode)prefix-suffix".</p></li>
+
+            <li><p>The <code>SmartPhone</code> class should extend the <code>Phone</code> class and add the following:</p></li>
+
+                <div class="class-diagrams">
+                    <table class="table-class-diagram">
+                        <tr><th>SmartPhone</th></tr>
+                        <tr><td>email : string</td></tr>
+                        </tr>
+                        <tr class='class-diagram-spacer'><td></td></tr>
+                        <tr><td>prompt() : void</td></tr>
+                        <tr><td>display() : void</td></tr>
+                    </table>
+                </div>
+
+            <li><p>The <code>prompt</code> method of the <code>SmartPhone</code> class should call the <code>promptNumber</code> method defined in the base class and then additionally prompt for an email address.</p></li>
+
+            <li><p>The <code>display</code> method of the <code>SmartPhone</code> class should call the <code>display</code> method defined in the base class and then display the email address. (Yes, it must call it, and yes they must both be named display.)</p></li>
+            <li><p>In <code>main</code> function, create a <code>Phone</code> object, call its <code>promptNumber</code> method and then its <code>display</code> method.</p></li>
+            <li><p>After that, also in <code>main</code>, create a <code>SmartPhone</code> object, call its <code>prompt</code> method and then its <code>display</code> method.</p></li>
+            <li><p>For simplicity, you may again put all of your classes in the same file.</p></li>
+        </ol>
+
+
+        <h3>Sample Output</h3>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Phone:
+Area Code: <span class="user-input">801</span>
+Prefix: <span class="user-input">123</span>
+Suffix: <span class="user-input">4567</span>
+
+Phone info:
+(801)123-4567
+
+Smart phone:
+Area Code: <span class="user-input">208</span>
+Prefix: <span class="user-input">867</span>
+Suffix: <span class="user-input">5309</span>
+Email: <span class="user-input">jenny@test.com</span>
+
+Phone info:
+(208)867-5309
+jenny@test.com
+</code></pre>
+
+        <h3>Automatic Grading Script (TestBed)</h3>
+        <p>This assignment is pass/fail. In order to receive credit, it must pass the auto-grading test script (TestBed). You can run this script as many times as you like while you are working on the assignment. The same test script will be run by the instructor for credit, so you should not be surprised at the result.</p>
+
+        <p>In addition, because the point of this exercise is to help you practice the use of inheritance. <strong>You must use inheritance</strong> to receive credit for this assignment.</p>
+
+        <p>To run the test script, log into the CS Department Linux system and run the <code>testBed</code> command, providing the class and test script to run as well as the Python program to use, for example:</p>
+
+<pre><code class="bash">
+testBed cs241/check06b check06b.py
+</code></pre>
+
+        <h3>Submission</h3>
+        <p>Submit your program by logging into the CS Department Linux system, and running the submit command with your filename, for example:</p>
+
+<pre><code class="bash">
+submit check06b.py
+</code></pre>
+
+        <p>You should then select the appropriate course (CS 241), instructor, and assignment from the list.</p>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
