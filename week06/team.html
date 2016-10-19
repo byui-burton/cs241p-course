@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Team Activity</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>06 Teach : Team Activity</h2>
+        <p>This activity is designed to be completed during class.
+        </p>
+
+        <h3>Overview</h3>
+        <p>Create a class to represent a <code>Circle</code>, based on a provided <code>Point</code> class. It has a center (x, y), and a radius. Because a <code>Circle</code> has an x and a y coordinate, and more, one way to view it, would be to consider that a <code>Circle</code> IS-A <code>Point</code>. In this case, the <code>Circle</code> class would inherit from the <code>Point</code> class, and simply add a radius to it.</p>
+
+        <p>On the other hand, another way to view the problem is to consider that a <code>circle</code> HAS-A point as its center, and then also has a radius. With this approach the <code>Circle</code> would not inherit from the <code>Point</code> class, but rather, would have a member variable that is of type <code>Point</code>.</p>
+
+        <p>For this activity, we will explore both options, first focusing on the IS-A relationship, and then the HAS-A approach.</p>
+
+        <h3>Instructions</h3>
+        <p>Divide your teams into groups of 2-3. You should all work together on one laptop, then make sure everyone in your team gets a copy of the work that you complete.</p>
+
+        <p>Begin by creating a simple point class to match the following diagram:</p>
+
+            <div class="class-diagrams">
+                <table class="table-class-diagram">
+                    <tr><th>Point</th></tr>
+                    <tr><td>x : float</td></tr>
+                    <tr><td>y : float</td>
+                    </tr>
+                    <tr class='class-diagram-spacer'><td></td></tr>
+                    <tr><td>promptForPoint() : void</td></tr>
+                    <tr><td>display() : void</td></tr>
+                </table>
+            </div>
+        
+        <h4>Core Requirements</h4>
+        <ol>
+            <li><p>Create the <code>Point</code> class as defined above. Then, create the <code>Circle</code> class as follows:</p>
+                <ol>
+                <li>Create a <code>Circle</code> class that inherits from, or extends, the <code>Point</code> class.</li>
+                <li>Create a blank method for promptForCircle and display.</li>
+                <li>In main, call these functions and ensure that everything compiles.</li>
+                </ol>
+            </li>
+
+            <li><p>Implement the promptForCircle method. It should ask for a <code>Circle</code> as follows:</p>
+
+<pre><code class="bash">
+Enter x: <span class="user-input">1</span>
+Enter y: <span class="user-input">2</span>
+Enter radius: <span class="user-input">3</span>
+</code></pre>
+
+            <p>Please note that the <code>Point</code> class will have a method called <code>promptForPoint</code>. <strong>Make sure you call this from your method to re-use code!</strong></p>
+            </li>
+
+            <li><p>Implement the display method. It should display a <code>Circle</code> as follows:</p>
+
+<pre><code class="bash">
+Center:
+(1, 2)
+Radius: 3
+</code></pre>
+
+            <p>Please note that the <code>Point</code> class will have a method called <code>display</code>. <strong>Make sure you call this from your method to re-use code!</strong> (Yes, these methods should both be called "display")</p>
+            </li>
+
+        </ol>
+
+        <h4>Stretch Challenges</h4>
+        <p> After completing the above steps. Make sure that everyone on the entire team is to this point and understands the material. Then, if you have time, move onto the following stretch challenges.</p>
+
+        <p>For the stretch challenge, you will repeat the activity using a HAS-A relationship.</p>
+
+        <ol>
+            <li>
+                <p>Make a copy of your code from before, and start with the same Point class as before. This time your <code>Circle</code> should NOT inherit from <code>Point</code>, but rather should have a <code>Point</code> as a member variable called center.</p>
+            </li>
+            <li>
+                <p>Implement the <code>promptForCircle</code> and <code>display</code> methods for your Circle class as before.</p>
+            </li>
+            
+            <li><p>Discuss with your team the pros and cons of the IS-A vs HAS-A approach to this problem. Determine which approach you feel is best and why. Then, include your answer and its rationale in your "Lessons Learned" question for the I-Learn assessment.</p></li>
+        </ol>
+
+
+
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week06/ta06-solution.py" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+        <h3>Submission</h3>
+        <p>When you have finished this activity, please fill out the assessment in I-Learn. You are welcome to complete any additional parts of this activity by yourself or with others after class before submitting the assessment.</p>
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
