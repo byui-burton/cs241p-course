@@ -126,8 +126,6 @@ class Game(arcade.Window):
 
         # TODO: Iterate through your targets and tell them to advance
 
-        for target in self.targets:
-            target.advance()
 
     def create_target(self):
         """
