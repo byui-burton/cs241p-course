@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Team Activity</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <img class="logo" src="../course/byui.png" />
+    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>07 Teach : Team Activity - Polymorphism</h2>
+
+        <p>This activity is designed to be completed during class.
+        </p>
+
+        <h3>Overview</h3>
+        <p>BYU-Idaho is having issues with their payroll system and has asked you to create a new one. You quickly recognize that there are two types of employees, hourly employees (those that get paid a certain amount per hour) and salary employees (those that receive an annual salary).</p>
+
+        <p>While these two types of employees have differences, they also have a significant amount in common. So you decide to create a common base class with each of these two types as a separate derived class.</p>
+
+        <h3>Instructions</h3>
+        <p>For this assignment, you will start with a blank file. To keep our focus directly on the abstract methods we are working with, you may put all of our classes in the same file rather than separate files.
+        </p>
+        
+        <h4>Core Requirements</h4>
+        <ol>
+
+            <li><p>Create a base class <code>Employee</code>, and two derived classes <code>HourlyEmployee</code> and <code>SalaryEmployee</code>, as follows:</p>
+                <ul>
+                    <li><p><code>Employee</code> should have a string name and a <code>display</code> function that displays the name.</p></li>
+                    <li><p><code>HourlyEmployee</code> should have an <code>int hourly_wage</code> and should override the <code>display</code> function to display the name and wage in the format: "<code>John - $8/hour</code>".</p></li>
+                    <li><p><code>SalaryEmployee</code> should have an <code>int salary</code>  and should override the <code>display</code> function to display the name and salary in the format: "<code>John - $50000/year</code>".</p></li>
+                    <li><p>You may also find it beneficial to parameters to your <code>__init__</code> function, but that is up to you.</p></li>
+                </ul>
+            </li>
+
+            <li><p>Create a <code>main</code> function that does the following:</p>
+                <ul>
+                    <li><p>Declare a list for employees.</p></li>
+                    <li><p>Loop until the user enters q and prompt the user for an "h" (hourly employee) or an "s" (salary employee) or "q" to quit.</p></li>
+                    <li><p>Then prompt for the <code>name</code> and the <code>hourlyRate</code>/<code>salary</code></p></li>
+                    <li><p>For each employee entered, create a new employee of the correct type and add it to the list.</p></li>
+                </ul>
+            </li>
+
+            <li><p>After the user enters q, have <code>main</code> loop through the list and call the <code>display</code> method for each employee. Run your program and ensure that it looks correct.</p>
+            </li>
+        </ol>
+
+        <h3>Stretch Challenges</h3>
+        <p> After completing the above steps. Make sure that everyone on the entire team is to this point and understands the material. Then, if you have time, move onto the following stretch challenges.</p>
+
+        <ol>
+            <li><p>Convert your Employee class to an Abstract Base Class and the display function to be an abstract method.</p></li>
+            <li>
+                <p>Add to your <code>HourlyEmployee</code> a member variable for hours. Then, add an <strong>abstract method</strong> to the employee class for <code>get_paycheck()</code> and override it in the derived classes. For hourly employees, this is calculated as the number of hours multiplied by the hourly rate. For salary employees, this should be the salary divided by 24.</p>
+                <p>Change your code that prompts for the hourly employee to also prompt for the number of hours.</p>
+                <p>In the loop in <code>main</code> that calls the <code>display</code> function, change it to also call the <code>get_paycheck()</code> function and display the pay check amount.</p>
+            </li>
+
+            <li><p>Add a regular function (not a member function of any class), <code>display_employee_data</code> that accepts an employee and calls its <code>display</code> function as well as its <code>get_paycheck()</code> function and displays the value. Then, remove this code from <code>main</code>, and replace it with a call to your new function.</p></li>
+
+        </ol>
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week07/ta07-solution.py" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+        <h3>Submission</h3>
+        <p>You do not need to submit your program (just make sure that everyone has a copy of it for their reference). Instead, answer the accompanying questions in the I-Learn quiz.</p>
+
+        </article>
+    </div>
+
+
+</body>
+
+</html>
