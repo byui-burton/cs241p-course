@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <img class="logo" src="../course/byui.png" />
+    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+
+        <h2>07 Prepare : Checkpoint B - Abstract Base Classes</h2>
+
+        <p>Please go back and read over the supplementary reading material on Abstract Base Classes from the <a href="./prepare.html">preparation material</a> for this week. Then, complete the following exercise.
+        </p>
+
+        <h3>Overview</h3>
+        <p>
+            This checkpoint is intended to help you practice the syntax of abstract base classes, and use these principles to have lists of related objects.
+        </p>
+
+
+        <p>For this checkpoint, you will create an abstract base class for a <code>Shape</code>, and two derived classes for specific shapes. The base class will have an abstract method, <code>get_area()</code> that is overriden by each derived class. You will then create a certain number of new shapes, as specified by the user, put them in the same array, and loop through and display the area of each.
+
+        <h3>Instructions</h3>
+
+        <p>For this assignment, because the classes we are going to create are so small and simplistic, and to help you focus on just the elements of inheritance and virtual functions, rather than the mechanics of creating lots of files, you will put all of your classes at the top of the main file, rather than creating separate files like we would for larger, real-world classes.</p>
+
+            <ol>
+                <li><p>Copy the template file /home/cs241/check07b.py to your working directory.</p></li>
+                <li><p>A <code>Shape</code> class has been provided that has a name and a display method. You need to convert it to an abstract base class and add an abstract method <code>get_area()</code>, thus it will look as follows:</p></li>
+
+                <div class="class-diagrams">
+                    <table class="table-class-diagram">
+                        <tr><th>Shape</th></tr>
+                        <tr><td>name : string</td></tr>
+                        </tr>
+                        <tr class='class-diagram-spacer'><td></td></tr>
+                        <tr><td>__init__() : None</td></tr>
+                        <tr><td>display() : None</td></tr>
+                        <tr><td><em>get_area</em>() : float</td></tr>
+                    </table>
+                </div>
+
+                <li><p>Add a Circle class that derives from the base Shape class.</p>
+                <ul>
+                    <li><p>Add an <code>__init__</code> function, and in it, call the super class <code>__init__</code> function, set the <code>name</code> variable to be "Circle", and the radius to be 0.0.</p></li>
+                    <li><p>Redefine the <code>get_area()</code> method to return "<code>3.14 * radius * radius</code>".</p></li>
+                </ul>
+                </li>
+
+                <li><p>Add a <code>Rectangle</code> class that also is derived from the Shape class.</p>
+                <ul>
+                    <li><p>Add an <code>__init__</code> function, and in it, call the super class <code>__init__</code> function, set the <code>name</code> variable to be "Rectangle", and a length and width to each be 0.0.</p></li>
+                    <li><p>Redefine the <code>get_area()</code> method to return "<code>length * width</code>".</p></li>
+                </ul>
+                </li>
+
+
+                <li><p>The provided code supplies you with a main function. It takes care of prompting the user for the correct values, and looping through. You need to add the following to main (at the places indicated in the comments):</p>
+                
+                <ul>
+                    <li><p>Declare a new list for your shapes.</p></li>
+                    <li><p>Declare a new <code>Circle</code>, set the radius, and add it to the list.</p></li>
+                    <li><p>Declare a new <code>Rectangle</code>, set the radius, and add it to the list.</p></li>
+
+                    <li><p>At the end of main, loop through each shape in the list and call its display function.</p></li>
+                </ul>
+                </li>
+
+            </ol>
+
+        <h2>Sample Output</h2>
+        <p>
+            The following is an example of output for this program:
+        </p>
+<pre><code class="bash">
+Please enter 'c' for circle, 'r' for rectangle or 'q' to quit: <span class="user-input">c</span>
+Enter the radius: <span class="user-input">3</span>
+Please enter 'c' for circle, 'r' for rectangle or 'q' to quit: <span class="user-input">r</span>
+Enter the length: <span class="user-input">2</span>
+Enter the width: <span class="user-input">4</span>
+Please enter 'c' for circle, 'r' for rectangle or 'q' to quit: <span class="user-input">r</span>
+Enter the length: <span class="user-input">4</span> 
+Enter the width: <span class="user-input">10</span>
+Please enter 'c' for circle, 'r' for rectangle or 'q' to quit: <span class="user-input">q</span>
+Circle - 28.26
+Rectangle - 8.00
+Rectangle - 40.00
+</code></pre>
+
+
+        <h3>Testbed</h3>
+        <p>
+            An auto-grading testbed script is provided for you to help evaluate your program. This same testbed script will be used to grade your program. It is pass/fail, so your program must pass the testbed completely for you to receive credit for this assignment. You may run the testbed as many times as you like.
+        </p>
+
+        <p>Please note that it is possible to do this assignment without using abstract methods, but this will not help you understand the concept, and you will not receive credit if you do not follow the instructions.
+        </p>
+
+        <h4>Helpful commands</h4>
+<pre><code class="bash">
+testBed cs241/check07a check07b.py
+submit check07b.py
+</code></pre>
+
+        </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

@@ -25,7 +25,56 @@
             </ul>
         </ul>
 
+        <h3>Additional Material</h3>
+        <p>Sometimes, we create a base class for the sake of helping to organize and combine common elements of derived classes, and yet, it doesn't make sense to instantiate the base class on it's own. For example, if we were creating classes to model bank accounts, we could imagine having one class for a checking account, and another for a savings account. Because these classes would have things in common, we could imagine creating a base "Account" class. And yet, you can never create a generic account. At the end of the day, you either have a checking account, or a savings account.</p>
+
+        <h4>Abstract Base Classes</h4>
+        <p>A base class that should not be instantiated on its own, but is used to define common elements of derived classes is called an Abstract Base Class.</p>
+
+        <p>Often with Abstract Base Classes, we can see that all derived classes should implement a common method, but the logic of this method will be different for each derived class. For example, all bank accounts may have a method to calculate fees, but how this is done for savings accounts could be very different for checking accounts. In this case it may be useful to define this method in the base class to show that it's there, but then we would expect each derived class to override it.</p>
+
+        <h4>Abstract Methods</h4>
+        <p>For methods that we expect to always be overridden, we can go one step further and <em>force</em> them to be overridden by declaring them as "abstract methods."</p>
+
+        <p>In this case, if someone comes along and creates a new type of bank account later, they will not be able to use it (they'll get an error) unless they override all the abstract methods. This guarantees that when we use any type of account we can count on the method being there.</p>
+
+        <h4>Python 3 Syntax</h4>
+        <p>In Python 3, abstract base classes are defined by inheriting from a class called "ABC". This is done as follows:</p>
+
+<pre><code class="python">
+from abc import ABC
+
+class Account(ABC):
+    def __init__(self):
+        self.name = ""
+        self.balance = 0.0
+</code></pre>
+
+        <p>Abstract methods are declared in this abstract base class, by using the abstractmethod decorator before the method as follows:</p>
+
+<pre><code class="python">
+from abc import ABC
+from abc import abstractmethod
+
+class Account(ABC):
+    def __init__(self):
+        self.name = ""
+        self.balance = 0.0
+
+    @abstractmethod
+    def get_fees(self):
+        pass
+</code></pre>
+
+        <p>Now, all classes that derive from the Account class must implement the get_fees method.</p>
+
+        <p>As a side note, be aware that, if desired, you can provide a body to the abstract method that could be invoked with the "super().get_fees()" call in a derived class.</p>
+
     </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 
