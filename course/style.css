@@ -93,7 +93,7 @@ img.screenshot-large {
     margin: 0 auto 0.5em auto;
 }
 
-p code, li code {
+/*p code, li code {
 	color: #A10200;
 	font-size: 18px;
 	font-family: Menlo, Monaco, Consolas, monospace;
@@ -101,11 +101,18 @@ p code, li code {
 	border: 1px solid #CCC;
 	padding: 2px 6px;
 }
+*/
 
+p code, li code {
+	font-size: 18px;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-weight:bold;
+}
+/*
 article ol li code {
 	margin-left: 0.5em;
 }
-
+*/
 .java.hljs {
 	padding: 15px;
 }
