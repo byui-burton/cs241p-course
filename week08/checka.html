@@ -58,27 +58,27 @@
 
 <pre><code class="python">
 def main():
-    gpa = GPA()
+    student = GPA()
 
     print("Initial values:")
-    print("GPA: {:.2f}".format(gpa.get_gpa()))
-    print("Letter: {}".format(gpa.get_letter()))
+    print("GPA: {:.2f}".format(student.get_gpa()))
+    print("Letter: {}".format(student.get_letter()))
 
     value = float(input("Enter a new GPA: "))
 
-    gpa.set_gpa(value)
+    student.set_gpa(value)
 
     print("After setting value:")
-    print("GPA: {:.2f}".format(gpa.get_gpa()))
-    print("Letter: {}".format(gpa.get_letter()))
+    print("GPA: {:.2f}".format(student.get_gpa()))
+    print("Letter: {}".format(student.get_letter()))
 
     letter = float(input("Enter a new letter: "))
 
-    gpa.set_letter(letter)
+    student.set_letter(letter)
 
     print("After setting letter:")
-    print("GPA: {:.2f}".format(gpa.get_gpa()))
-    print("Letter: {}".format(gpa.get_letter()))
+    print("GPA: {:.2f}".format(student.get_gpa()))
+    print("Letter: {}".format(student.get_letter()))
 
 if __name__ == "__main__":
     main()
