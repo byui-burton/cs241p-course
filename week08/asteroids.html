@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Prove</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>Asteroids Project Description</h2>
+
+        <h3>Overview</h3>
+        <p>For this assignment, we will implement a version of the classic arcade game Asteroids.
+        </p>
+
+        <h3>Instructions</h3>
+        <p>We will be using the same arcade library as previous projects. Please refer to their instructions for more information about setting up and configuring your development environment.</p>
+
+
+        <p>The following shows the game in action:</p>
+
+        <img src="./images/asteroids.png" style="width:400px" alt="Asteroids Game" title="Asteroids Game"/>
+
+        <h3>Game Rules and Specification</h3>
+        <ol>
+            <li><p>Ship</p>
+            <ul>
+                <li><p>The ship obeys the laws of motion. When in motion, the ship will tend to stay in motion.</p></li>
+                <li><p>Note that the angle or orientation of the ship can be different than the direction it is traveling.</p></li>
+                <li><p>The right and left arrows rotate the ship 3 degrees to either direction.</p></li>
+                <li><p>The up arrow will increase the velocity in the direction the ship is pointed by 0.25 pixels/frame.</p></li>
+                <li><p>For collision detection, you can assume the ship is a circle of radius 30.</p></li>
+            </ul>
+            </li>
+
+            <li><p>Bullets</p>
+            <ul>
+                <li><p>Pressing space bar will shoot a bullet.</p></li>
+                <li><p>Bullets are should start with the same velocity of the ship (speed and direction) plus 10 pixels per frame in the direction the ship is pointed. This means if the ship is traveling straight up, but pointed directly to the right, the bullet will have a velocity that is at an angle up and to the right (starting with an upward velocity from the ship, and adding to it a velocity to the right because of the direction the ship is pointed).</p></li>
+                <li><p>There is no limit to the number of bullets that can be fired.</p></li>
+                <li><p>Bullets only live for 60 frames, after which they should "die" and be removed from the game.</p></li>
+                <li><p>For collision detection, you can assume that bullets have a radius of 30</p></li>
+            </ul>
+            </li>
+            <li><p>Asteroids</p>
+            <ul>
+                <li><p>There are 3 types of asteroids in the game:</p></li>
+
+
+                <li><p>Large Asteroids</p></li>
+                <ol>
+                    <li><p>Moves at 1.5 pixels per frame, at a random initial direction.</p></li>
+                    <li><p>Rotates at 1 degree per frame.</p></li>
+                    <li><p>For collision detection, can be treated as a circle with radius 15.</p></li>
+                    <li><p>If a large asteroid gets hit, it breaks apart and becomes two medium asteroids and one small one.</p></li>
+                    <li><p>The first medium asteroid has the same velocity as the original large one plus 2 pixel/frame in the up direction.</p></li>
+                    <li><p>The second medium asteroid has the same velocity as the original large one plus 2 pixel/frame in the down direction.</p></li>
+                    <li><p>The small asteroid has the original velocity plus 5 pixels/frame to the right.</p></li>
+                    
+                </ol>
+                
+                <li><p>Medium Asteroid</p></li>
+                <ol>
+                    <li><p>Rotates at -2 degrees per frame.</p></li>
+                    <li><p>For collision detection, can be treated as a circle with radius 5.</p></li>
+                    <li><p>If hit, it breaks apart and becomes two small asteroids.</p></li>
+                    <li><p>The small asteroid has the same velocity as the original medium one plus 1.5 pixels/frame up and 1.5 pixels/frame to the right.</p></li>
+                    <li><p>The second, 1.5 pixels/frame down and 1.5 to the left.</p></li>
+
+                </ol>
+
+                <li><p>Small Asteroid</p></li>
+                <ol>
+                    <li><p>Rotates at 5 degrees per frame.</p></li>
+                    <li><p>For collision detection, can be treated as a circle with radius 2.</p></li>
+                    <li><p>If a small asteroid is hit, it is destroyed and removed from the game.</p></li>
+                </ol>
+
+            </ul>
+            </li>
+
+            <li><p>Other game rules</p>
+            <ul>
+                <li><p>The game begins with 5 large asteroids.</p></li>
+                <li><p>All elements (ship, bullets, asteroids) should "wrap" around the edges of the screen. In other words, if an object goes off the right edge of the screen, it should appear on the left edge.</p></li>                
+            </ul>
+            </li>
+
+        </ol>
+
+
+        <h3>Architectural Design</h3>
+        <p>The entire program will need to be implemented using the principles of encapsulation. Thus, you need to think about the different components (classes) that you will need in the game, and their various actions (methods) and properties (member variables). Before you start programing, you will need to produce UML class diagrams for each of the classes you will be using. Please pay special attention to the design of these components, so they can be as general-purpose as possible.</p>
+
+        <p>In addition, for this project you will be expected to use the principles of inheritance, polymorphism, and abstract methods. You should identify code that is shared among classes and put it in a common base class.</p>
+
+        <h4>Getting Started</h4>
+        <p>You will use the same framework and classes that you used for Pong and Skeet.</p>
+
+        <p>With each project, you have written more of the logic of the game and (hopefully) have become more familiar with the concepts of objects interacting, the game loop, etc. At this point, using the previous projects as a guide, you will start mostly from scratch to create your Asteroids project. A starter program with a few functions to help handle the keystrokes, etc., is a available at: <a href="" target="_BLANK">asteroids.py</a>.</p>
+
+        <h3>Milestones</h3>
+        
+        <p>Starting a large project like this can sometimes seem overwhelming. So to help guide you through this process, a milestone deliverable will be required at the end of each week. More detailed information is contained below, but in short these milestones will require:</p>
+
+        <ul>
+            <li><p>Milestone 1 - Stub functions and floating rocks</p></li>
+            <li><p>Milestone 2 - Ship and bullets working</p></li>
+            <li><p>Milestone 3 - Collisions and asteroids breaking apart</p></li>
+            <li><p>Final Project - Finish the project and add extra features</p></li>
+        </ul>
+
+        <h3>Assignments</h3>
+        <p>You have four weeks to complete this project, with milestone submissions due along the way. Please note that this is a challenging project that will require you to apply several new and challenging topics. If you wait until the last week, you will not have time to complete the project.</p>
+
+        <p>This project will be broken up into the following assignment submissions:</p>
+
+        <ul>
+            <li><p><a href="../week08/asteroids-design.html" target="_BLANK">08 Prove : Design - Asteroids</a></p></li>
+            <li><p><a href="../week08/prove.html" target="_BLANK">08 Prove : Milestone - Asteroids Part 1</a></p></li>
+            <li><p><a href="../week09/prove.html" target="_BLANK">09 Prove : Milestone - Asteroids Part 2</a></p></li>
+            <li><p><a href="../week10/prove.html" target="_BLANK">10 Prove : Milestone - Asteroids Part 3</a></p></li>
+            <li><p><a href="../week11/prove.html" target="_BLANK">11 Prove : Project - Asteroids</a></p></li>
+        </ul>
+
+        <h3>Expectation to Excel</h3>
+        <p>As explained in more detail in the Project link above, the requirements presented here are simply a base standard. To receive up to 100% on this assignment you are expected to show creativity and excel above and beyond what is specifically required.</p>
+
+        <h3>Hints and examples</h3>
+        <p>The following examples may be helpful:</p>
+
+        <ul>
+            <li><p>Trig functions (sin, cos, tan) will likely be helpful in determining the x and y components of an angle. They can be found in the <code>math</code> library and used as follows. (Note that they expect radians rather than degrees, and there are handy functions to convert between them.)</p></li>
+<pre><code class="python">
+import math // used for sin, cos, and M_PI
+...
+speed = 10
+angle = 60
+
+dx = math.cos(math.radians(angle)) * speed
+dy = math.sin(math.radians(angle)) * speed
+</code></pre>
+
+
+        </ul>
+
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    </article>
+
+</body>
+
+</html>
