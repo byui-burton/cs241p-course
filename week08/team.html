@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Team Activity</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <img class="logo" src="../course/byui.png" />
+    <h1>Object-oriented Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>08 Teach : Team Activity - Getters / Setters</h2>
+
+        <p>This activity is designed to be completed during class.
+        </p>
+
+        <h3>Overview</h3>
+        <p>Practice using getters and setters by creating a class to model a time of day.</p>
+
+        <h3>Instructions</h3>
+        <h4>Core Requirements</h4>
+        <ol>
+            <li>
+                <p>Create a <code>Time</code> class that stores three ints for hours, minutes, and seconds. Prefix each variable with an underscore to indicate to others that these are private variables. Then, create getters and setters for each variable (e.g., <code>get_hours()</code>, <code>set_hours(value)</code>, <code>get_minutes()</code>, ...).</p>
+
+                <p>Assume that these values will store the data in military time (hours from 0-23). Put logic in the setters so that if the value if new value is higher than acceptable (hours &gt; 23, minutes or seconds &gt; 59) that it should set them to the maximum amount. Similarly, attempt to set values lower than 0, should set them to 0.</p>
+            </li>
+            <li>
+                <p>Write a main function that creates a new time object. Have it prompt the user for hours, minutes, and seconds, use your setters to set each of these values, then use your getters to display each one. Please note that the input should be obtained in main and passed to a setter. Neither the getter or setter should prompt the user for anything.</p>
+                <p>Test your getters and setters by entering values that are valid and also some that are invalid.</p>
+            </li>
+            <li>
+                <p>Create a property for each component named <code>hours</code>, <code>minutes</code>, and <code>seconds</code>. Connect them to the getters and setters you have made using the <code>hours = property(get_hours, set_hours)</code> syntax.</p>
+                <p>Change your main function so that it no longer calls any of the getters or setters directly, but instead uses the property. Then test it with several different values.</p>
+            </li>
+        </ol>
+
+        <h3>Stretch Challenges</h3>
+        <p> After completing the above steps. Make sure that everyone on the entire team is to this point and understands the material. Then, if you have time, move onto the following stretch challenges.</p>
+
+        <ol>
+            <li>
+                <p>Create a new getter property called "<code>hours_simple</code>" that returns the hours in a simple, non military time, format of 1-12. Also create a new getter property called "<code>period</code>" that returns either "<code>AM</code>" or "<code>PM</code>" depending on the value of the hours.</p>
+
+                <p>Create each of these getters using the <code>@property</code> decorator syntax. Then update main to additionally display these values.</p>
+            </li>
+
+            <li>
+                <p>Change your time's internal representation to no longer use three separate integers for the hours, minutes, and seconds, but rather store only the number of seconds since midnight. You can use the mod operator (<code>%</code>) to help you determine the number of minutes and hours. Notice that the external use of your class (i.e., main) should not change.</p>
+
+                <p>First, get the getters to work with this new implementation.</p>
+
+            </li>
+            <li><p>Finally, get the setters to work with the new implementation.</p></li>            
+
+        </ol>
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week08/ta08-solution.py" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+        <h3>Submission</h3>
+        <p>You do not need to submit your program (just make sure that everyone has a copy of it for their reference). Instead, answer the accompanying questions in the I-Learn quiz.</p>
+
+        </article>
+    </div>
+
+
+</body>
+
+</html>
