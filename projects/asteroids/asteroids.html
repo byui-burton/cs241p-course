@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>CS 241 - Prove</title>
-    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../course/style.css" />
 </head>
 
 <body>
@@ -105,6 +105,26 @@
 
         <p>With each project, you have written more of the logic of the game and (hopefully) have become more familiar with the concepts of objects interacting, the game loop, etc. At this point, using the previous projects as a guide, you will start mostly from scratch to create your Asteroids project. A starter program with a few functions to help handle the keystrokes, etc., is a available at: <a href="" target="_BLANK">asteroids.py</a>.</p>
 
+        <h4>Using the Graphics</h4>
+        <p>For this project, instead of just drawing circles and rectangles, we will be rendering bitmap images. In particular, we will use a set of images that come with the examples of the aracade library we are using. You can download the images from GitHub <a href="" target="_BLANK">here</a>.</p>
+
+        <p>I would recommend creating a sub-directory to put all your images in called, "images". Then, you can refer to them in your code as: "images/playerShip1_orange.png" or whatever the name of the image is. Once you have them downloaded, you can use code similar to the following to render an image at a given location:</p>
+
+<pre><code class="python">
+img = "images/playerShip1_orange.png"
+texture = arcade.load_texture(img)
+
+width = texture.width
+height = texture.height
+alpha = 1 # For transparency, 1 means not transparent
+
+x = self.center.x
+y = self.center.y
+angle = self.angle
+
+arcade.draw_texture_rectangle(x, y, width, height, texture, angle, alpha)    
+</code></pre>
+
         <h3>Milestones</h3>
         
         <p>Starting a large project like this can sometimes seem overwhelming. So to help guide you through this process, a milestone deliverable will be required at the end of each week. More detailed information is contained below, but in short these milestones will require:</p>
@@ -151,7 +171,7 @@ dy = math.sin(math.radians(angle)) * speed
         </ul>
 
 
-   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script src="../../course/js/highlight/highlight.pack.js"></script>
    <script>hljs.initHighlightingOnLoad();</script>
 
 
