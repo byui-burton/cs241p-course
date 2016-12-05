@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Checkpoint</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+
+        <h2>13 Prepare : Checkpoint A - Linux Commands</h2>
+
+        <p>After completing (or <i>while</i> completing) the first section of the <a href="./prepare.html">preparation material</a> for this week, complete the following exercise.
+        </p>
+
+        <h3>Overview</h3>
+        <p>
+            This checkpoint is intended to help you practice the syntax of I/O redirection in Linux. Please read the following <a href="http://linuxcommand.org/lc3_learning_the_shell.php" target="_BLANK">Learning the Shell</a> with particular focus on the I/O Redirection section.
+        </p>
+       
+        <h3>Instructions</h3>
+
+        <p>For this assignment, you will not write and submit a program in Python. Instead, you need to practice using Linux shell commands to complete each of the following tasks. Then, report on your progress via the accompanying I-Learn quiz. For each task, check off if you were able to complete the command, and then copy and paste the command that you used.</p>
+
+        <p>Hint: Be careful. It is easy to erase or ruin files that are important with a simple Linux command. I recommend creating a new empty directory and changing to that directory before practicing these commands.</p>
+
+            <ol>
+                <li><p><strong>Echo to a file</strong>. From the command line, create a new file named hello.txt, that has the text, "Hello CS 241 World".</p></li>
+                
+                <li><p><strong>"Cat" a file</strong>. Display the contents of your hello.txt file by using the "cat" command to display it to the screen.</p></li>
+
+                <li><p><strong>Append to a file</strong>. From the command line, append the text "More text here..." to your hello.txt file. Run your command three times and verify the output.</p></li>
+
+                <li><p><strong>Directory listing to a file</strong>. List out all the files and sub-directories in <code>/home</code>, and save this result to a file named: homeDirs.txt</p></li>
+
+                <li><p><strong>Get the first 20 lines</strong>. Use the "head" command to get the first 20 lines of the homeDirs.txt file and put them in a new file named: homeDirs_20.txt</p></li>
+
+                <li><p><strong>Search files</strong>. Use the "grep" command to search through all the .py files in your home directory (or in a cs241 subdirectory) and display all the files that use the term "format".</p></li>
+
+                <li><p><strong>Less</strong>. Repeat the grep command from the last step, but this time, pipe the result to "less" so you can scroll through it.</p></li>
+
+                <li><p><strong>Grep, Tail, and Redirect</strong>. Repeat the same grep command, but this time, get only the last 5 lines of the result and save them to a file. This means you'll want to pipe the result to "tail" and then redirect the output to a file.</p></li>
+
+            </ol>
+
+        </article>
+
+</body>
+
+</html>
