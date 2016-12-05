@@ -15,21 +15,23 @@
     <article>
         <h2>13 Teach : Team Activity</h2>
 
-        <h2>Overview</h2>
+        <h3>Overview</h3>
         <p>This activity will help you practice writing shell scripts in Linux.</p>
 
         <p>Your assignment is to write a shell script that accepts a directory as a command line parameter, and then iterates through the .py files in that directory.</p>
 
-        <h2>Instructions</h2>
-        <h3>Core Requirements</h3>
+        <h3>Instructions</h3>
+        <h4>Core Requirements</h4>
         <ol>
             <li><p>Create a shell script that accepts a file as a command line parameter and then displays it to the screen as follows: (The dollar sign below just means you are typing it at the command line)</p>
+
+            <p>Make your script executable and ensure that it runs.</p></li>
 
 <pre><code class="bash">
 $ ./lineCounter.sh myFile.py
 Running on file: myFile.py
 </code></pre>
-                <p>Make your script executable and ensure that it runs.</p></li>
+
 
             <li><p>Have your script count the number of lines in that file and display it to the screen. For example:</p></li>
 
@@ -64,7 +66,7 @@ Files in the directory:
  -->       
         </ol>
 
-        <h2>Stretch Challenges</h2>
+        <h4>Stretch Challenges</h4>
         <p> After completing the above steps. Make sure that everyone on the entire team is to this point and understands the material. Then, if you have time, move onto the following stretch challenges.</p>
 
         <ol>
@@ -72,27 +74,26 @@ Files in the directory:
  
 <!--             <li>Have your script sum up all the lines of all the <code>.cpp</code> files in the given directory, and display the total number of lines at the very end.</li>
  -->
-            <li>Change your script so that the number of lines per file is saved to an output file, rather than to the screen. Specify the output file with another parameter (e.g., <code>./lineCounter.sh /home/cs241 pyLines.txt</code>)
+            <li><p>Change your script so that the number of lines per file is saved to an output file, rather than to the screen. Specify the output file with another parameter (e.g., <code>./lineCounter.sh /home/cs241 pyLines.txt</code>)</p></li>
 
-            <li>Change your script so that it looks through sub-directories (just one level deep) for <code>.py</code> files as well.</li>
+            <li><p>Change your script so that it looks through sub-directories (just one level deep) for <code>.py</code> files as well.</p></li>
 
-            <li>Change your script so that in additional to accepting a directory name, it also accepts a list of potential extensions (e.g., <code>./lineCounter.sh /home/cs241 pyLines.txt py cpp txt</code>). Then, have it count the lines in all of those types of files.</li>
+            <li><p>Change your script so that in additional to accepting a directory name, it also accepts a list of potential extensions (e.g., <code>./lineCounter.sh /home/cs241 pyLines.txt py cpp txt</code>). Then, have it count the lines in all of those types of files.</p></li>
         </ol>
 
-        <h1>Instructor's Solution</h1>
+        <h3>Instructor's Solution</h3>
         <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
 
         <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
 
         <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week13/ta-solution" target="_BLANK">click here for the instructor's solution</a>.</p>
 
-        <h1>Submission</h1>
+        <h3>Submission</h3>
         <p>You do not need to submit your program (just make sure that everyone has a copy of it for their reference). Instead, answer the accompanying questions in the I-Learn quiz.</p>
 
 
 
-        </article>
-    </div>
+    </article>
 
    <script src="../course/js/highlight/highlight.pack.js"></script>
    <script>hljs.initHighlightingOnLoad();</script>
