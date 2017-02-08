@@ -16,8 +16,8 @@ class Point:
         self.y = 0
 
     def prompt_for_point(self):
-        self.x = int(input("Enter x: "))
-        self.y = int(input("Enter y: "))
+        self.x = float(input("Enter x: "))
+        self.y = float(input("Enter y: "))
 
     def display(self):
         print("({}, {})".format(self.x, self.y))
@@ -33,7 +33,7 @@ class Circle(Point):
 
     def prompt_for_circle(self):
         self.prompt_for_point() # call the point method
-        self.radius = int(input("Enter radius: "))
+        self.radius = float(input("Enter radius: "))
 
     def display(self):
         print("Center:")
