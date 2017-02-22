@@ -27,13 +27,15 @@
 
         <h3>Instructions</h3>
 
-        <p>Create a class to hold a student's GPA. This GPA should be in the range of 0.0 to 4.0.</p>
+        <p>Create a class to hold a student's GPA. This GPA should be in the range of 0.0 to 4.0. Your class should only store the numeric gpa value, NOT a letter. It will have getters and setters that work with the letter, but do so indirectly, as described below.</p>
 
         <p>Create an <code>__init__()</code> function to set the initial value to 0.0.</p>
 
         <p>Create a function for <code>get_gpa()</code> and <code>set_gpa(value)</code> that get and set the GPA stored in this class. If a GPA less that 0 is entered, you should not set the internal value to that, but instead, set it to 0. Similarly, if a value greater than 4 is entered, you should instead set the value to 4.0.</p>
 
-        <p>You should also create a function for <code>get_letter()</code> and <code>set_letter(letter)</code>. For simplicity, you need not worry about "+" or "-" grades, but instead, return the following letters depending on the range:</p>
+        <p>You should also create a function for <code>get_letter()</code> and <code>set_letter(letter)</code>. But you should NOT store the letter internally. Instead, when someone calls the <code>get_letter()</code> function, you should determine the correct letter for the stored gpa, and return it. Similarly, when the <code>set_letter()</code> function is called, you should determine the appropriate gpa value and store that.</p>
+
+        <p>For simplicity, you need not worry about "+" or "-" grades, but instead, return the following letters depending on the range:</p>
 
         <ul>
             <li><p>F: 0.0-0.99</p></li>
