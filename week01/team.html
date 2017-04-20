@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Team Activity</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>01 Teach : Team Activity</h2>
+
+        <h3>Overview</h3>
+            <p>Most of your DNA sequence is identical to every other human on the planet. However, certain locations in our DNA sequence are of special interest. These locations, called genetic markers, can be used to uniquely identify someone, predict the likelihood of a genetic disorder, or help trace ancestry through time. 
+        </p><p>
+            In the case of forensics, we are most interested in the genetic markers that are most <em>variable</em>. In other words, that change in every generation. This allows scientists to look at a fragment of DNA at a crime scene and compare it to the same section of DNA in a suspect and see if it matches up.
+         </p><p>
+            In the case of genealogy, we are most interested in the genetic markers that are the most <em>conserved</em>. In other words, those sections of DNA that remain relatively constant in each generation. 
+         </p><p>
+            For tracing ancestry, genetic genealogy services such as Family Tree DNA and 23andMe use between 20 and 700,000 different markers that vary in length between 1 and 300 nucleotides each. By using these services, someone can find long-lost cousins that share the same paternal or maternal ancestry.
+        </p><p>
+            In this assignment, you'll write a Python 3 program that uses a single genetic marker to determine the similarity of two users.
+        </p>
+        <h3>Instructions</h3>
+        <p>Divide into groups of 2-3, working on one laptop.</p>
+
+        <p>To accomplish this task, complete the following:</p>
+
+        <h4>Core Requirements</h4>
+        <ol>
+            <li><p>Prompt the user for a DNA sequence. Then count how many A's are in the sequence and display the results.</p>
+            </li>
+<pre><code class="bash">
+Please enter your DNA sequence: AATCGCGATT
+The sequence AATCGCGATT has 3 A's.
+</code></pre>
+
+            <li><p>Ask for the DNA sequence of the user's friend. Calculate how many matches they have and display that number, as well as the percent match.</p>
+            <p>For this part, assume that each sequence has 10 characters.</p>
+            </li>
+            
+<pre><code class="bash">
+Please enter your DNA sequence: AATCGCGATT
+The sequence AATCGCGATT has 3 A's.
+
+Please enter your friend's DNA sequence: AAAATTTTTT
+You and your friend had 4 matches for 0.4%</code></pre>
+            
+            <li><p>Repeat the previous step, but this time, do not assume the length of the sequence is 10. Instead, determine the length to compare by using the smaller of the two sequences.</p>
+            </li>
+<pre><code class="bash">
+Please enter your DNA sequence: CAT
+The sequence CAT has 1 A's.
+
+Please enter your friend's DNA sequence: AAATTT
+You and your friend had 1 matches for 0.3333333333333333%</code></pre>
+        </ol>
+
+
+        <h4>Stretch Challenges</h4>
+        <p>After finishing the core requirements, help everyone on your larger team complete them. When everyone has completed the core requirements, please move on to these stretch challenges.</p>
+        <ol>
+            <li><p>Allow the user to enter several friends' sequences at once. To accomplish this, first as the user for how many friends they would like to enter. Then, loop through that many times and ask for each friends name.</p>
+
+            </li>
+            <li><p>After gathering all the names, loop through again, and ask for each friend's DNA with a prompt showing their name, e.g., "Enter the DNA sequence for John: ".</p>
+            </li>
+            <li><p>After the user has entered all the DNA sequences, loop through them to compute the number of matches and percent match for each person and display it.</p>
+
+            </li>
+        </ol>
+
+        <h3>Instructor's Solution</h3>
+        <p>As a part of this team activity, you are expected to look over a solution from the instructor, to compare your approach to that one. One of the questions on the I-Learn submission will ask you to provide insights from this comparison.</p>
+
+        <p>Please DO NOT open the solution until you have worked through this activity as a team for the one hour period. At the end of the hour, if you are still struggling with some of the core requirements, you are welcome to view the instructor's solution and use it to help you complete your own code. Even if you use the instructor's code to help you, you are welcome to report that you finished the core requirements, if you code them up yourself.</p>
+
+        <p>After working with your team for the one hour activity, <a href="https://github.com/byui-burton/cs241p-course/tree/master/week01/ta01-solution.py" target="_BLANK">click here for the instructor's solution</a>.</p>
+
+
+        <h3>Submission</h3>
+        <p>This team activity was for practice and will not be submitted.</p>
+        <p>For future team activities, you will submit a quiz in I-Learn to note the parts of the activity that you completed.</p>
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+
+</html>
