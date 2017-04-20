@@ -41,5 +41,5 @@ for i in range(length):
         match_count += 1
 
 # Display the results:
-match_percent = match_count / length
+match_percent = match_count / length * 100
 print("You and your friend had {} matches for {}%".format(match_count, match_percent))
