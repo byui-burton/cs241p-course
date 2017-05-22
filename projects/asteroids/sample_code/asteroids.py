@@ -68,7 +68,7 @@ class Game(arcade.Window):
 
         # TODO: draw each object
 
-    def animate(self, delta_time):
+    def update(self, delta_time):
         """
         Update each object in the game.
         :param delta_time: tells us how much time has actually elapsed

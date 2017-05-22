@@ -109,7 +109,7 @@ class Game(arcade.Window):
         start_y = SCREEN_HEIGHT - 20
         arcade.draw_text(score_text, start_x=start_x, start_y=start_y, font_size=12, color=arcade.color.NAVY_BLUE)
 
-    def animate(self, delta_time):
+    def update(self, delta_time):
         """
         Update each object in the game.
         :param delta_time: tells us how much time has actually elapsed
