@@ -126,7 +126,6 @@ class Game(arcade.Window):
 
         # TODO: Iterate through your targets and tell them to advance
 
-
     def create_target(self):
         """
         Creates a new target of a random type and adds it to the list.
@@ -134,8 +133,6 @@ class Game(arcade.Window):
         """
 
         # TODO: Decide what type of target to create and append it to the list
-
-
 
     def check_collisions(self):
         """
@@ -148,16 +145,35 @@ class Game(arcade.Window):
 
         for bullet in self.bullets:
             for target in self.targets:
-                too_close = bullet.radius + target.radius
 
-                if (abs(bullet.center.x - target.center.x) < too_close and
-                            abs(bullet.center.y - target.center.y) < too_close):
-                    # its a hit!
-                    self.score += target.hit()
-                    self.bullets.remove(bullet)
+                # Make sure they are both alive before checking for a collision
+                if bullet.alive and target.alive:
+                    too_close = bullet.radius + target.radius
 
-                    if not target.alive:
-                        self.targets.remove(target)
+                    if (abs(bullet.center.x - target.center.x) < too_close and
+                                abs(bullet.center.y - target.center.y) < too_close):
+                        # its a hit!
+                        bullet.alive = False
+                        self.score += target.hit()
+
+                        # We will wait to remove the dead objects until after we
+                        # finish going through the list
+
+        # Now, check for anything that is dead, and remove it
+        self.cleanup_zombies()
+
+    def cleanup_zombies(self):
+        """
+        Removes any dead bullets or targets from the list.
+        :return:
+        """
+        for bullet in self.bullets:
+            if not bullet.alive:
+                self.bullets.remove(bullet)
+
+        for target in self.targets:
+            if not target.alive:
+                self.targets.remove(target)
 
     def check_off_screen(self):
         """
