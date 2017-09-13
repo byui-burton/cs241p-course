@@ -20,13 +20,34 @@
         <p>Demonstrate that you can write and submit a simple program in Python.</p>
 
         <h3>Overview</h3>
-        <p>Write a program in Python 3 that displays the text <code>Hello Python World!</code> on the screen.</p>
+        <p>Write a program for Python 3 that displays the text <code>Hello Python World!</code> on the screen.</p>
 
         <h3>Sample Output</h3>
 
 <pre><code class="bash">
 Hello Python World!
 </code></pre>
+
+        <h3>Writing Python Programs</h3>
+        <p>To write programs to run in the Department Linux Environment, you have two choices, you can either login to the system and write them there, or you can write them on your own computer and copy them up to the Linux system.</p>
+
+        <h4>Writing Programs in the Linux Environment</h4>
+        <p>To write programs in the Linux environment, you need to first login, then you can use the program "emacs" to write them. To use it, you type emacs followed by the name of the file that your program is in (either a new file to create, or an existing one), such as:</p>
+
+<pre><code class="bash">
+emacs check01a.py
+</code></pre>
+
+        <p>When using emacs, if you are using a program like MobaXTerm on Windows, or you have used XQuartz on the Mac, it will pop up a separate window with your code. You can use the mouse to save and exit, etc. If emacs opens in the same window, you will have to use the keyboard for any commands. To save, you press "Control and X" then "Control and S". To Quit, you press "Control and X" then "Control and C". Emacs is admittedly cumbersome, but it's nice that you are writing programs that are already in the Linux environment, ready to go.</p>    
+
+        <h4>Writing Program on your own computer, then copying them to Linux.</h4>
+        <p>Another option for writing your programs is to write them first on your own computer using any text editor you'd like. Then, you can copy the program to the Linux environment and run it there.</p>
+
+        <p>There are many different text editors that you can choose from, including Sublime, NotePad++, Atom, or others. The trick is to have an editor that is just for text, not something that formats a document like Microsoft Word.</p>
+
+        <p>Once you have written your program, you need to copy it to the Linux system. MobaXTerm shows the file locations and can be used to drag and drop files, or to edit them directly. Otherwise, if you are not using that, or if you are on a Mac, you'll need to get a separate program to handle the copying. The most common programs for Windows are FileZilla or WinSCP. The most common one for the Mac is CyberDuck. All of these programs are available for free. But many of them are downloaded from pages that have lots of big bright "download me" links for other stuff. Be careful and make sure you only download the application you want.</p>
+
+        <p>Once you have downloaded one of these programs, you will need to configure it to connect to the Linux System, using the same IP address, username, and password that you used to login previously. Make sure to specify port 215 (rather than port 22) as part of your configuration. Once set up, these programs let you drag and drop your Python files between your computer and the Linux system.</p>
 
         <h3>Running Python in the Department Linux Environment</h3>
         <p>You may use any editor your like to write your programs. Then, you can run your program on the Linux server as follows:</p>
