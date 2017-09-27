@@ -40,10 +40,84 @@
         <p>In additional to the reading from the online textbook, the following will introduce you to the idea of object composition.</p>
 
         <h4>Objects that contain more complicated data</h4>
-        <p></p>
+        <p>Consider a class for a person, it might contain their first and last name, and other information:</p>
 
+        <div class="class-diagrams">
+            <table class="table-class-diagram">
+                <tr><th>Person</th></tr>
+                <tr><td>first_name : string</td></tr>
+                <tr><td>last_name : string</td></tr>
+                <tr><td>... : ...</td></tr>
+                </tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+            </table>
+        </div>
+
+        <p>Some of the other information about a person could be there home address. At first, we might decide to add street, city, and zip code directly to the person object. However there are some limitations to this. First, this address information may have other properties, methods, and behaviors that wouldn't make sense for a person such as <code>is_PO_box()</code>. Also, if the user has two addresses, such as a home and billing address, this would require duplicating lots of member variables.</p>
+        <p>A better approach is to have the address be a class of its own:</p>
+        <div class="class-diagrams">
+            <table class="table-class-diagram">
+                <tr><th>Address</th></tr>
+                <tr><td>street : string</td></tr>
+                <tr><td>city : string</td></tr>
+                <tr><td>state : string</td></tr>
+                <tr><td>zip_code : string</td></tr>
+                </tr>
+                <tr class='class-diagram-spacer'><td></td></tr>
+                <tr><td>__init__()</td></tr>
+            </table>
+        </div>
+
+        <p>Then, we would say that a person <em>has an</em> address. This relationship is know as <strong>composition</strong> and is often called a <strong>has-a</strong> relationship.</p>
+
+        <h4>Using Composition in Python</h4>
+        <p>It is quite natural to use composition in Python. There are no special constructs. Instead, you create variables, just as you normally would, but the type of data stored in that variable is a complex object, rather than a primitive. For example, a default <code>__init__</code> function for the person class may look as follows:</p>
+
+<pre><code class="python">
+class Person:
+    def __init__(self):
+        self.first_name = ""
+        self.last_name = ""
+        self.home_address = Address()
+        self.billing_address = Address()
+</code></pre>
+
+        <p>Then, when you create a <code>Person</code> object, you can access the inner objects properties by chaining together "." calls such as:</p>
+
+<pre><code class="python">
+bob = Person()
+
+bob.first_name = "Robert"
+bob.last_name = "Jones"
+bob.home_address.street = "123 North Street"
+bob.home_address.city = "Rexburg"
+...
+bob.billing_address.street = "PO Box 123"
+</code></pre>
+
+        <p>Notice that even though the home address and the billing address are both <code>Address</code> objects, they can and do have very different values. Just as two string variables can have different values, so can two objects of a complex type.</p>
+
+    <h3>Working with Multiple Files</h3>
+    <p>A common practice is to put separate Python classes in separate files. Then, these classes are available to use in other programs. Python has a special way of handling different files and the directories they are in, organizing them into modules. But as we get started, we'll keep it simple</p>
+    <p>Assume that you have two files <code>person.py</code> and <code>address.py</code>, and that the code in <code>person.py</code> needs to know about the class defined in <code>address.py</code>. (Please be aware that it is customary to name the class Address with a capital A, but to name the file address.py with a lowercase a.)</p>
+
+    <p>If these two files are in the same directory, at the top of <code>person.py</code>, to import the <code>Address</code> class, you include the following line:</p>
+
+<pre><code class="python">
+from address import Address
+</code></pre>
+
+    <p>Notice the difference in capitalization here. The first <code>address</code> is lowercase, because we are noting that it is "from the address.py" file that we will get the class (but we don't say ".py" because Python assumes our address file will have a .py extension). The second <code>Address</code> is capitalized, because it is the name of the class that we are importing from the provided file.</p>
+
+    <p>With that import statement in our file, we can use the code, the same as if it were written directly in our file.</p>
 
     </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
 
 </body>
 
