@@ -1,0 +1,25 @@
+Your Name:
+
+1. Besides the obvious aspect of writing fewer lines of code, what is a benefit of having a method call the methods of an internal object, as opposed to doing the work itself? (E.g., Why is it beneficial for the get_subtotal method of the Order class to make use of methods from the Product class?)
+
+
+2. What is the most interesting thing you learned as a part of your work for this class this week?
+
+
+3. Describe one specific way that you helped someone else this week, or reached out for help.
+
+
+4. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
+
+
+5. How much time did you spend this week on each of the following:
+
+Reading - 
+Checkpoint A - 
+Checkpoint B - 
+Team Activity - 
+Data Structures Homework - 
+Prove Assignment - 
+
+If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
+
