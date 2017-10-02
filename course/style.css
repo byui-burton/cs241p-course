@@ -342,3 +342,10 @@ div.tips p:first-child {
 div.tips p {
 	font-size: 0.8em;
 }
+
+
+p.subtitle {
+	text-align: center;
+	margin-top: -30px;
+	color: #0F6CB6;
+}

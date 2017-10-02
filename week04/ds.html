@@ -16,7 +16,7 @@
     <article>
 
         <h2>04 Prepare : Data Structures</h2>
-        <h2>Linked Lists</h2>
+        <p class="subtitle">Linked Lists</p>
 
         <h3>Outcomes</h3>
         <p>At the end of this study, successful students will be able to:</p>
@@ -49,68 +49,140 @@
         </ol>
 
         <h3>Data Structures for the Common Person</h3>
-        <p>With an understanding of the fundamentals of linked lists, we now join our commoner Steve, and his fledgling hamburger stand. Please watch the following short video:</p>
+        <p>With an understanding of the fundamentals of linked lists, we now join our commoner, Steve, and his fledgling hamburger stand. Please watch the following short video:</p>
 
         <ul>
             <li><p><a href="#" target="_blank">Data structures for the common person - Linked Lists</a></p></li>
         </ul>
 
         <h3>Using Linked Lists in Python</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Many languages have a LinkedList library that provides all of this behavior for you. Python does not specifically have a "LinkedList" collection. It does, however, have a deque (Double-ended queue, pronounced "deck"), which is in fact implemented as a doubly-linked list (see: <a href="https://stackoverflow.com/a/6257048" target="_blank">StackOverflow)</a>.</p>
+
+        <p>The Deque is a generalization of stacks and queues (which we will learn about in future weeks), but provides all the functionality we would expect from a LinkedList, with O(1) insertion and removal from the beginning and end of the list, and O(n) retrieval of an item at a specific index. See the <a href="https://docs.python.org/3/library/collections.html#collections.deque" target="_blank">Python documentation</a> for a list of available methods, but in short:</p>
+
+        <ul>
+            <li><p>append(x) - Adds x to the end of the list</p></li>
+            <li><p>appendleft(x) - Adds x to the beginning of the list</p></li>
+            <li><p>insert(i, x) - Inserts x at index i</p></li>
+            <li><p>pop() - Removes and returns the last item in the list</p></li>
+            <li><p>popLeft() - Removes and returns the first item in the list</p></li>
+        </ul>
+
+        <p>In addition, you can iterate over a deque, using a for loop, just like a list:</p>
 
 <pre><code class="bash">
-mkdir assign04
-cd assign04
+from collections import deque
 
-cp /home/cs241/assign04/main.py .
+cars = deque()
+cars.append("Ford")
+cars.append("Mazda")
+cars.append("Dodge")
+
+for car in cars:
+    print(car)
 </code></pre> 
 
+        <p>And, you technically <em>can</em> use the index notation to access and object (e.g., <code>print(cars[2])</code>, but remember, this is an O(n) operation, so if we are wanting to do this much, a linked list may not be the right choice.
 
         <h3>Homework Assignment</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Use a linked list (i.e., a Python deque) to keep track of a playlist of songs. Your playlist should have the functionality to add songs to the end of the list, insert a new one at the first of the list (so that it is played next), and then to play a song (which removes it from the list).</p>
 
+        <h4>Instructions</h4>
+        <p>Follow these steps to help guide you through the assignment:</p>
+
+        <ol>
+            <li><p>Create a <code>Song</code> class that has member variables for a <code>title</code> and an <code>artist</code>. It should have a <code>prompt</code> function that asks the user for the title and artist, and a <code>display</code> function that displays the title and the artist to the screen.</p></li>
+
+            <li><p>Create a deque of songs for your playlist.</p></li>
+
+            <li><p>Set up a main loop that asks the user for one of the following options:</p></li>
+            <ul>
+                <li><p>Add new song to the end of the playlist.</p></li>
+                <li><p>Insert a new song at the beginning of the playlist (so it will play next).</p></li>
+                <li><p>Play a song (this should remove it from the playlist).</p></li>
+            </ul>
+
+            <li><p>Implement each of the above actions. For the ones that add a new song, it should prompt the user for the values, and then add the song to the play list.</p></li>
+            <li><p>When the user selects the option to play a song, it should be removed from the list. Then, display a message to the user, "Playing song:", followed by the title and the artist of the song that was just removed from the front of the playlist.</p></li>
+            <li><p>If the user attempts to play a song and the playlist is empty, they should receive a message that informs them the playlist is empty, and then they can make another selection. (A Python error message should not occur and be displayed.)</p></li>
+        </ol>
+
+        <h4>Example output</h4>
 <pre><code class="bash">
-mkdir assign04
-cd assign04
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">3</span>
 
-cp /home/cs241/assign04/main.py .
+The playlist is currently empty.
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">1</span>
+
+Enter the title: <span class="user-input">Let it Be</span>
+Enter the artist: <span class="user-input">The Beatles</span>
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">2</span>
+
+Enter the title: <span class="user-input">The Sound of Silence</span>
+Enter the artist: <span class="user-input">Simon and Garfunkel</span>
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">3</span>
+
+Playing song:
+The Sound of Silence by Simon and Garfunkel
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">3</span>
+
+Playing song:
+Let it Be by the Beatles
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">3</span>
+
+The playlist is currently empty.
+
+Options:
+1. Add a new song to the end of the playlist
+2. Insert a new song to the beginning of the playlist
+3. Play the next song
+4. Quit
+Enter selection: <span class="user-input">4</span>
+
+Goodbye
 </code></pre> 
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-
-<pre><code class="bash">
-mkdir assign04
-cd assign04
-
-cp /home/cs241/assign04/main.py .
-</code></pre> 
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+        <h4>Testing your Playlist program</h4>
+        <p>To help keep your focus squarely on the data structure involved, and not on matching a particular testBed output, an automated grading script is not provided. Instead, test your own code by adding different songs to the beginning and end of the playlist, and playing them. Ensuring that everything works as you would expect.</p>
 
         <h3>Submission</h3>
-        <p>Report your progress on the homework assignment and demonstrate your understanding of linked lists by taking the accompanying quiz in Python.</p>
+        <p>When you have a good understanding of this data structure and have completed the programming project, take the accompanying I-Learn Quiz. It has questions about how the data structure works, and also, has places for your to report on the parts of the programming assignment that you completed.</p>
 
    <script src="../course/js/highlight/highlight.pack.js"></script>
    <script>hljs.initHighlightingOnLoad();</script>
