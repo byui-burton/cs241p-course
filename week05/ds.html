@@ -25,6 +25,8 @@
             <li><p>Use Stacks in Python to solve problems.</p></li>
         </ol>  
 
+        <p>Please be aware that while the concept of a stack is fairly straight-forward, the accompanying programming assignment here is somewhat challenging, so please start early and help one another.</p>
+
         <h3>Preparation Material</h3>
 
         <p>Please read the following:</p>
@@ -41,11 +43,14 @@
         </ul>
 
         <h3>Using Stacks in Python</h3>
+        <p>Python does not have a specific, "Stack" data structure. Instead, they make use of the built-in List data structure. Please read <a href="https://docs.python.org/3.6/tutorial/datastructures.html#using-lists-as-stacks" tagret="_blank">Using Lists as Stacks</a> from the official documentation.</p>
 
-
+        <p>In short, the list provides an <code>.append()</code> method that we use to push, and a <code>.pop()</code> method that removes the top item on the stack (i.e., the last item in the list) and returns it.</p>
 
         <h3>Homework Assignment</h3>
-        <p>Write a program that will read in a file containing three kinds of braces: { }, ( ), and [ ]. Your program should display either "Balanced" or "Not balanced". To be balanced, a file must contain the same number of open braces as closed braces, and they must be closed in the reverse order of how they were opened. You should ignore all whitespace.</p>
+        <p>An interesting problem that Stacks can help us solve is that of determining if a program had balanced braces. For example, code like <code>print(stuff[i])</code> is balanced where as <code>print(stuff[i)]</code>, <code>print(stuff[i]</code>, and <code>print(stuff[i]))</code> are not balanced.</p>
+
+        <p>To simplify the problem, we will use files that only contain braces (no other words). Your task is to write a program that will read in a file containing three kinds of braces: { }, ( ), and [ ] and display either "Balanced" or "Not balanced". To be balanced, a file must contain the same number of open braces as closed braces, and they must be closed in the reverse order of how they were opened. You should ignore all whitespace.</p>
 
         <p>The following are examples of balanced braces:</p>
 <pre><code class="bash">
@@ -66,11 +71,8 @@
 </code></pre>
 
         <h4>Getting Started</h4>
-        <p>You can start with a beginning template by copying it to your current directory:
-
-<pre><code class="bash">
-cp /home/cs241/stacks05/braces.py .
-</code></pre>
+        <p>Figuring out this problem is a little tricky. Try to think about how a stack might help.</p>
+        <p>Because we need to have closing braces occur in the reverse order of the opening ones (think Last-in First-out), one idea is to think about putting opening braces onto a stack when they are encountered, and then when closing braces are encountered you could check to see if they match the brace that's currently on the top of the stack. Of course, you also need to make sure the stack has things in it, and ends with no extra items at the end of the program.</p>
 
         <h4>TestBed and Submission</h4>
         <p>An automated TestBed script is provided for you. It will test your program on 6 different files.</p>
@@ -92,8 +94,6 @@ testBed cs241/stacks05 braces.py
         <p>You will not submit your program for grading, instead take the accompanying I-Learn quiz to report on your progress and your understand of stacks.</p>
 
         <p>You are encouraged to work with others on the programming and the quiz.</p>
-
-
 
         <h3>Submission</h3>
         <p>When you have a good understanding of this data structure and have completed the programming project, take the accompanying I-Learn Quiz. It has questions about how the data structure works, and also, has places for your to report on the parts of the programming assignment that you completed.</p>
