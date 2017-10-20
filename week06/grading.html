@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Assessment Guidelines</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>06 Prove : Assessment Guidelines</h2>
+
+        <h3>Overview</h3>
+        <p>This document outlines the guidelines for instructors and teaching assistants to use as they assess the assignment. It is intended to give structure and guidance to the grading process to ensure that the most important components of the assignment are highlighted, and to promote consistency across sections.</p>
+
+        <p>In all cases, the instructor has the latitude to deviate from this rubric on a case-by-base basis to provide the holistic assessment that, in their judgment, best matches the assignment.</p>
+
+        <h3>Goal of Milestone Assessments</h3>
+        <p>The goal with this assignment is to help students stay on track toward their future deliverable, and also to give them feedback quickly if they are headed down a bad path. With that in mind, the focus of this assessment is NOT to account for a few points here or there, but rather to give feedback and guidance.</p>
+
+        <h3>Fundamental Concepts</h3>
+        <p>This assignment is designed to highlight the following fundamental concepts:</p>
+        <ul>
+            <li><p>Inheritance.</p></li>
+            <li><p>Inheritance.</p></li>
+            <li><p>Inheritance.</p></li>
+        </ul>
+        <p>If nothing else, we need to make sure their classes are designed correctly, have the correct relationships, and that the right variables/methods are defined in the right place in the inheritance hierarchy.</p>
+
+        <h3>Major Things to Look For</h3>
+        <p>The following should be present for this milestone:</p>
+        <ul>
+            <li><p>Point class (likely just an x and y)</p></li>
+            <li><p>Velocity class (likely just a dx and dy)</p></li>
+            <li><p>FlyingObject Base class (or something similar)</p></li>
+            <li><p>Class for a bullet</p></li>
+            <li><p>Class for a target (for this week, only one is required)</p></li>
+            <li><p>Bullets firing in the right direction</p></li>
+            <li><p>A target flying across the screen</p></li>
+        </ul>
+
+        <p>No collisions, scoring, or dying when things leave the screen is necessary at this point</p>
+
+        <p>From a design standpoint, we also expect to see:</p>
+        <ul>
+            <li><p>Point and velocity should be in the base class, not directly in the bullet or target</p></li>
+            <li><p>Advance and is_off_screen should also be in the base class, not in the bullet or target</p></li>
+            <li><p>Use of the point class for drawing and moving (sometimes, a point is there, but then also add an x and y to the object that are used instead. This is not correct)</p></li>
+            <li><p>Bullet and target classes should each define their own draw functions.</p></li>
+            <li><p>Abstract methods may be present in base classes, which is excellent, but we haven't talked about this yet.</p></li>
+            <li><p>Make sure objects inherit from the appropriate base class, and also call super().__init__() in their inits.</p></li>
+        </ul>
+
+        <h3>Scoring</h3>
+        <p>Given the formative nature of this assessment, the scoring is done in broad strokes as follows:</p>
+
+        <ul>
+            <li><p>100% - Functionality is there, and the base class is used correctly</p></li>
+            <li><p>90% - Minor issue with functionality or inheritance, such as not putting advance in the base class</p></li>
+            <li><p>75% - Program compiles/runs, but missing major functionality or not using a base class</p></li>
+            <li><p>50% - Some attempt was made and general concepts are started</p></li>
+            <li><p>0% - Nothing submitted</p></li>
+        </ul>
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
