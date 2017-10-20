@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Assessment Guidelines</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>05 Prove : Assessment Guidelines</h2>
+
+        <h3>Overview</h3>
+        <p>This document outlines the guidelines for instructors and teaching assistants to use as they assess the assignment. It is intended to give structure and guidance to the grading process to ensure that the most important components of the assignment are highlighted, and to promote consistency across sections.</p>
+
+        <p>In all cases, the instructor has the latitude to deviate from this rubric on a case-by-base basis to provide the holistic assessment that, in their judgment, best matches the assignment.</p>
+
+        <h3>Fundamental Concepts</h3>
+        <p>This assignment is designed to highlight the following fundamental concepts:</p>
+        <ul>
+            <li><p>Separation of concerns into the correct classes / methods.</p></li>
+            <li><p>Correct use of composition (HAS-A) relationships.</p></li>
+            <li><p>Correct interaction with the provided game class.</p></li>
+        </ul>
+
+        <h3>Scoring</h3>
+        <p>The following categories are used to score this assignment:</p>
+<pre>
+/20 - Ball functionality
+/20 - Paddle functionality
+/20 - Ball class design and implementation
+/20 - Paddle class design and implementation
+/10 - Point and velocity classes
+/10 - Style
+----------------
+/100 - Total    
+</pre>
+        <p></p>
+
+        <h4>Overall Scoring</h4>
+        <p>For each of the categories the following general scoring guidelines apply:</p>
+        <ul>
+            <li><p>100% - Correctly implemented</p></li>
+            <li><p>85% - Minor error exists</p></li>
+            <li><p>70% - A major error or multiple minor errors exist</p></li>
+            <li><p>50% - A good attempt was made.</p></li>
+            <li><p>0% - No attempt made.</p></li>
+        </ul>
+
+        <p>If necessary scores in between the above classifications can be assigned.</p>
+
+        <h4>Examples of Major/Minor errors</h4>
+        <p>Paddle Functionality</p>
+        <ul>
+            <li><p>Minor - Does not stop at the screen edges</p></li>
+            <li><p>Major - Does not move</p></li>
+            <li><p>Major - Displays at a different place than where it actually is</p></li>
+        </ul>
+        <p>Ball Functionality</p>
+        <ul>
+            <li><p>Minor - Starts/restarts at an incorrect place (or the same place)</p></li>
+            <li><p>Minor - Starts with constant velocity rather than random</p></li>
+            <li><p>Major - Does not bounce</p></li>
+            <li><p>Major - Does not restart</p></li>
+            <li><p>An attempt made - Ball displays, but does not move</p></li>
+        </ul>
+        <p>Class design / implementation</p>
+        <ul>
+            <li><p>Major - Methods do things they shouldn't (e.g., <code>advance</code> is drawing things or <code>on_draw</code> is updating them)</p></li>
+            <li><p>Major - Game has been changed to do the things that class methods should do (e.g., move, draw).</p></li>
+            <li><p>Minor - It works, but better practice requires doing it slightly differently, such as duplication of code.</p></li>
+            <li><p>Suggestion (but no point deductions) - Duplicated logic in restart and init that could be combined.</p></li>
+        </ul>
+
+        <h4>Style</h4>
+        <p>In general, the program should use descriptive variable/method names, have class/function headers, and occasional in-line comments.</p>
+
+        <p>In addition, the program should make use of constants rather than magic numbers for game parameters (e.g., SCREEN_WIDTH)</p>
+
+        <p>Consider the following points associated with these:</p>
+        <ul>
+            <li><p>Not using constants for game parameters. -1/-2 depending on how widespread the use is.</p></li>
+            <li><p>Variable/method naming. -1 for slight problems such as abbreviations that should be spelled out. -3 for more fundamental problems.</p>
+                <p>Single variable names are acceptable for a short-lived variable, such as <code>for p in self.products:</code></p></li>
+            <li><p>Class/method headers. -2 if missing completely, -1 if many are present, but many are missing.</p></li>
+            <li><p>In-line comments. -2 if no in-line comments exist at all.</p></li>
+        </ul>
+
+
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
