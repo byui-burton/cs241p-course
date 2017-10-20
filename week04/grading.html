@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Assessment Guidelines</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>04 Prove : Assessment Guidelines</h2>
+
+        <h3>Overview</h3>
+        <p>This document outlines the guidelines for instructors and teaching assistants to use as they assess the assignment. It is intended to give structure and guidance to the grading process to ensure that the most important components of the assignment are highlighted, and to promote consistency across sections.</p>
+
+        <p>In all cases, the instructor has the latitude to deviate from this rubric on a case-by-base basis to provide the holistic assessment that, in their judgment, best matches the assignment.</p>
+
+        <h3>Fundamental Concepts</h3>
+        <p>This assignment is designed to highlight the following fundamental concepts:</p>
+        <ul>
+            <li><p>Cohesion of classes - Each class should be responsible for its members and not for anything else.</p></li>
+            <li><p>Reuse of same-class methods - Method x in the class should make use of method y where possible to avoid code duplication.</p></li>
+            <li><p>Reuse of sub-class methods - Wherever possible the outer class should call inner class methods to accomplish a task, rather than duplicating the logic.</p></li>
+        </ul>
+
+        <h3>Scoring</h3>
+        <p>The following categories are used to score this assignment:</p>
+<pre>
+/20 - Product Class
+/30 - Order Class
+/30 - Customer Class
+/10 - Use of multiple files.
+/10 - Style
+----
+/100 - Total    
+</pre>
+        <p></p>
+
+        <h4>Classes</h4>
+        <p>For each of the classes, the points should reflect both functionality and the design of the class. For each class, use the following guidelines:</p>
+
+        <ul>
+            <li><p>100% (20/20 or 30/30) - The functionality of the class is perfect (matches testBed exactly), and the design is excellent.</p></li>
+            <li><p>95% (19/20 or 28/30) - Minor formatting errors exist in the output (e.g., whitespace, newlines, etc.), but the values produced are otherwise correct.</p></li>
+            <li><p>85% (17/20 or 25/30) - All important concepts are present, but a minor error exists in either the functionality or the design. Examples include:</p>
+                <ul>
+                    <li><p>Incorrect calculations/values</p></li>
+                    <li><p>Duplication of code rather than making use of an existing method.</p></li>
+                </ul>
+            </li>
+            <li><p>70% (14/30 or 21/30) - A more fundamental error exists. Examples include:</p>
+
+                <ul>
+                    <li><p>Not looping through a list of child objects (e.g., the program assumes only 3 elements and references them directly self.products[0]).</p></li>
+                    <li><p>Missing methods/functionality.</p></li>
+                </ul>
+            </li>
+
+            <li><p>50% (10/20 or 15/30) - The class has been created, correct member variables are present, but little to no functionality is present.</p></li>
+            <li><p>25% (5/20 or 7/30) - An empty class has been created.</p></li>
+        </ul>
+
+        <h4>Use of Multiple Files</h4>
+        <p>This assignment should make use of multiple files:</p>
+        <ul>
+            <li><p>100% (10/10) - Multiple files used correctly.</p></li>
+            <li><p>50% (5/10) - An attempt was made to use files, but errors exist.</p></li>
+            <li><p>0% (0/10) - The program was all in a single file.</p></li>
+        </ul>
+
+        <h4>Style</h4>
+        <p>In general, the program should use descriptive variable/method names, have class/function headers, and occasional in-line comments. Consider the following points associated with these:</p>
+        <ul>
+            <li><p>Variable/method naming. -1 for slight problems such as abbreviations that should be spelled out. -3 for more fundamental problems.</p>
+                <p>Single variable names are acceptable for a short-lived variable, such as <code>for p in self.products:</code></p></li>
+            <li><p>Class/method headers. -2 if missing completely, -1 if many are present, but many are missing.</p></li>
+            <li><p>In-line comments. -2 if no in-line comments exist at all.</p></li>
+        </ul>
+
+
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
