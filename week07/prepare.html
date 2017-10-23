@@ -15,8 +15,23 @@
     <article>
         <h2>07 Prepare : Reading</h2>
 
+        <h3>Outcomes</h3>
+        <p>At the end of this week, successful students will be able to:</p>
+        <ol>
+            <li><p>Show fluency in discussing polymorphism.</p></li>
+            <li><p>Write programs that correctly use polymorphism to solve problems.</p></li>
+        </ol>
+
+
         <h3>Preparation Material</h3>
-        <p>For this week, please read the following sections from the textbook, "Python 3 Object-oriented Programming" by Dusty Phillips.</p>
+        <p>For this week, please read the following introduction to Polymorphism:</p>
+        <ul><li><p><a href="https://pythonspot.com/en/polymorphism/" target="_blank">https://pythonspot.com/en/polymorphism/</a></p></li></ul>
+
+        <p>Then, read this more detailed description of how this works in Python:</p>
+        <ul><li><p><a href="http://blog.thedigitalcatonline.com/blog/2014/08/21/python-3-oop-part-4-polymorphism/" target="_blank">http://blog.thedigitalcatonline.com/blog/2014/08/21/python-3-oop-part-4-polymorphism/</a></p></li></ul>
+
+
+<!--         <p>For this week, please read the following sections from the textbook, "Python 3 Object-oriented Programming" by Dusty Phillips.</p>
 
         <ul>
             <li><p>From Chapter 3, from Multiple Inheritance to the end of the chapter. In my copy this is pp. 68-94.</p></li>
@@ -24,7 +39,7 @@
                 <li><p>The most important part of this reading is the section on Polymorphism. If the multiple inheritance discussion is hard to follow, that's ok, we won't use really be using it.</p></li>
             </ul>
         </ul>
-
+ -->
         <h3>Additional Material</h3>
         <p>Sometimes, we create a base class for the sake of helping to organize and combine common elements of derived classes, and yet, it doesn't make sense to instantiate the base class on it's own. For example, if we were creating classes to model bank accounts, we could imagine having one class for a checking account, and another for a savings account. Because these classes would have things in common, we could imagine creating a base "Account" class. And yet, you can never create a generic account. At the end of the day, you either have a checking account, or a savings account.</p>
 
@@ -49,6 +64,11 @@ class Account(ABC):
         self.name = ""
         self.balance = 0.0
 </code></pre>
+
+        <div class="tips">
+            <p>Instructor Tips:</p>
+            <p>Please note that "ABC" is the actual name that you will use, it is not just a made up term like "use class x to do thing y." It stands for Abstract Base Class.</p>
+        </div>
 
         <p>Abstract methods are declared in this abstract base class, by using the abstractmethod decorator before the method as follows:</p>
 
