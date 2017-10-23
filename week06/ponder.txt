@@ -1,9 +1,9 @@
 Your Name:
 
-1. Give a specific example of a time when you might want to override a method from a base class?
+1. Give a specific example of a time when you might want to override a method from a base class.
 
 
-2. Do you think IS-A or HAS-A is a better choice for the team activity (Circles and Points). Why?
+2. Do you think IS-A or HAS-A is a better choice for the team activity (Circles and Points)? Why?
 
 
 3. What is the most interesting thing you learned as a part of your work for this class this week?
