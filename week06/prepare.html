@@ -23,19 +23,70 @@
         </ol>
 
         <h3>Preparation Material</h3>
-        <p>Please read the following: <a href="https://www.digitalocean.com/community/tutorials/understanding-inheritance-in-python-3" target="_blank">https://www.digitalocean.com/community/tutorials/understanding-inheritance-in-python-3</a></p>
+        <p>Please read the following:</p>
+
+        <ul><li><p><a href="https://www.digitalocean.com/community/tutorials/understanding-inheritance-in-python-3" target="_blank">https://www.digitalocean.com/community/tutorials/understanding-inheritance-in-python-3</a></p></li></ul>
 
         <h3>Supplementary Material</h3>
-        <p>In previous semesters, students read about inheritance from the textbook, "Python 3 Object-oriented Programming" by Dusty Phillips. This is available electronically from our library subscription <a href="http://site.ebrary.com/lib/byuidaho/detail.action?docID=10442987#?" target="_blank">here</a>.</p>
+        <h4>Python 3 Inheritance Syntax at a Glance</h4>
+        <p>The reading above made use of the syntax of inheritance. In its simplest form, here is what you need to do to create a derived class:</p>
 
-        <p>If you would like, you can reference this electronic textbook for more information about the topics. Here are the appropriate sections:</p>
+        <p>We first need to define the base class. Nothing fancy here:</p>
 
-        <ul>
-            <li><p>From Chapter 1, from the section "Composition and Inheritance" until the end of the chapter. In my copy this is pp. 17-32. This reading presents inheritance at a conceptual level.</p></li>
-            <li><p>From Chapter 3, from the beginning until (but not including) Multiple Inheritance. In my copy this is pp. 63-68. This reading demonstrates how to implement inheritance in Python.</p></li>
-        </ul>
+<pre><code class="python">
+class Product:
+    def __init__(self):
+        # Define any member variables that are shared among all
+        # derived classes
+        self.price = 0.0
+        self.quantity = 0
+
+    # We can also define any methods that are shared among all classes
+
+    def get_total_price(self):
+        return self.price * self.quantity
+</code></pre>
+
+<p>We now define a derived class (or multiple derived classes)</p>
+
+<pre><code class="python">
+# Notice that we put Product in parentheses to show they we are inheriting from it
+class Cereal(Product):
+    def __init__(self):
+        # We override the base class __init__ function to declare any cereal-specific
+        # member variables. Notice that we MUST call the super().__init__ function
+        # to ensure that the member variables in the base class also get set up.
+
+        # First call the base class version
+        super().__init__()
+
+        # Now, set up any member variables
+        self.weight = 0.0
+
+    # We can also define any functions that are specific to the cereal class.
+
+    def calculate_shipping_cost(self):
+        return 0.05 * self.weight
+</code></pre>
+
+<p>With these classes in place, we can now create an instance of type cereal and use any methods or properties defined in either the base or the derived class:</p>
+
+<pre><code class="python">
+corn_flakes = Cereal()
+corn_flakes.price = 3.49
+corn_flakes.quantity = 1
+corn_flakes.weight = 2.05
+
+price = corn_flakes.get_total_price()
+cost = corn_flakes.calculate_shipping_cost()
+</code></pre>
+
 
     </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 
