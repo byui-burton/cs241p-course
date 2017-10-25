@@ -41,15 +41,130 @@
         </ul>
 
         <h3>Using Queues in Python</h3>
+        <p>Python has some built-in classes for Queues that are designed for more complex scenarios such as when multiple processes are trying to access the queue at the same time (see: <a href="https://docs.python.org/3/library/queue.html" target="_blank">https://docs.python.org/3/library/queue.html</a>).</p>
 
+        <p>For simple queues, however it is recommended to use the <a href="https://docs.python.org/3/library/collections.html#collections.deque" target="_blank">Deque</a> class, that we also used for LinkedLists. (It is a double-ended queue, built as a doubly-linked list.)</p>
 
+        <p>To use a Deque, you simply call the <code>.append()</code> method to add an item to the back of the queue, and the <code>.popleft()</code> method to remove and return the first item from the front of the queue.</p>
 
         <h3>Homework Assignment</h3>
+        <p>Use a Queue (i.e., a Python deque) to keep track of a students that are requesting help from a TA. When a student asks for help, they are placed in the back of the queue. When a TA is available to help, the person at the front of the queue is removed from the queue and helped.</p>
 
+        <h4>Instructions</h4>
+        <p>Follow these steps to guide you through the process:</p>
 
-        <p>You are encouraged to work with others on the programming and the quiz.</p>
+        <ol>
+            <li>
+                <p>Create a Student class with the following properties:</p>
+
+                <div class="class-diagrams">
+                    <table class="table-class-diagram">
+                        <tr><th>Student</th></tr>
+                        <tr><td>name : string</td></tr>
+                        <tr><td>course : string</td></tr>
+                        </tr>
+                        <tr class='class-diagram-spacer'><td></td></tr>
+                        <tr><td>__init__()</td></tr>
+                        <tr><td>prompt()</td></tr>
+                        <tr><td>display()</td></tr>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <p>Create a HelpSystem class with the following properties:</p>
+
+                <div class="class-diagrams">
+                    <table class="table-class-diagram">
+                        <tr><th>HelpSystem</th></tr>
+                        <tr><td>waiting_list : deque</td></tr>
+                        </tr>
+                        <tr class='class-diagram-spacer'><td></td></tr>
+                        <tr><td>__init__()</td></tr>
+                        <tr><td>is_student_waiting() : boolean</td></tr>
+                        <tr><td>add_to_waiting_list(Student)</td></tr>
+                        <tr><td>help_next_student()</td></tr>
+                    </table>
+                </div>
+
+                <p>The <code>is_student_waiting()</code> method should return True if there are currently students in the waiting_list, and false if not.</p>
+                <p>The <code>add_to_waiting_list(Student)</code> method should return receive a <code>Student</code> as a parameter and add them to the waiting list.</p>
+                <p>The <code>help_next_student()</code> method should first check if there is a student waiting (i.e., call the method for this), and if not, display "No one to help". If there is a student waiting then it should remove them from the waiting_list and display, "Now helping John with CS 241" assuming that John is the name of the student, and CS 241 is the course.</p>
+            </li>
+            <li><p>Create a <code>main</code> function that gives the user the option to add a new student, or to have a student be helped. It begins by creating a HelpSystem object, and then calls the appropriate methods on it (including creating a student to pass to the method as necessary).</p></li>
+
+            <li><p>Test your program with various scenarios to ensure that it works. Make sure to include boundary conditions, such as not having any students.</p></li>
+
+            <li><p>You <strong>must</strong> use a deque for this assignment. Do not simply use a list. (It would have O(1) insertion time, but O(n) removal time!)</p></li>
+        </ol>
+
+        <h4>Sample Output</h4>
+
+<pre><code class="bash">
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">2</span>
+
+No one to help.
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">1</span>
+
+Enter name: John
+Enter course: CS 241
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">1</span>
+
+Enter name: Emily
+Enter course: CS 345
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">2</span>
+
+Now helping John with CS 241
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">2</span>
+
+Now helping Emily with CS 345
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">2</span>
+
+No one to help.
+
+Options:
+1. Add a new student
+2. Help next student
+3. Quit
+Enter selection: <span class="user-input">3</span>
+
+Goodbye
+</code></pre> 
+
+        <h4>TestBed</h4>
+        <p>To keep your focus squarely on the queue functions, and not on the formatting constraints, an auto-grading testBed script is not provided for this assignment. Please test it thoroughly yourself and then answer the questions in the quiz.</p>
 
         <h3>Submission</h3>
+        <p>You are encouraged to work with others on the programming and the quiz.</p>
+
         <p>When you have a good understanding of this data structure and have completed the programming project, take the accompanying I-Learn Quiz. It has questions about how the data structure works, and also, has places for your to report on the parts of the programming assignment that you completed.</p>
 
    <script src="../course/js/highlight/highlight.pack.js"></script>
