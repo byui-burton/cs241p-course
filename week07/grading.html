@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Assessment Guidelines</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>07 Prove : Assessment Guidelines</h2>
+
+        <h3>Overview</h3>
+        <p>This document outlines the guidelines for instructors and teaching assistants to use as they assess the assignment. It is intended to give structure and guidance to the grading process to ensure that the most important components of the assignment are highlighted, and to promote consistency across sections.</p>
+
+        <p>In all cases, the instructor has the latitude to deviate from this rubric on a case-by-base basis to provide the holistic assessment that, in their judgment, best matches the assignment.</p>
+
+        <h3>Fundamental Concepts</h3>
+        <p>This assignment is designed to highlight the following fundamental concepts:</p>
+        <ul>
+            <li><p>Inheritance</p></li>
+            <li><p>Polymorphism</p></li>
+            <li><p>Correct use of composition (HAS-A) relationships</p></li>
+        </ul>
+
+        <h3>Scoring</h3>
+        <p>The following categories are used to score this assignment:</p>
+<pre>
+/10 - Functionality: Bullets
+/10 - Functionality: Basic target creation / movement
+/10 - Functionality: Collisions and scoring
+/10 - Functionality: Multiple target types
+/13 - Design: Inheritance
+/10 - Design: Overriding functions
+/10 - Design Cohesion / modularity
+/10 - Code: General code quality
+/10 - Code: Style
+/7 - Above and beyond requirements
+----------
+/100 - Total
+</pre>
+        <p></p>
+
+        <h4>Overall Scoring</h4>
+        <p>For each of the categories the following general scoring guidelines apply:</p>
+        <ul>
+            <li><p>100% - Correctly implemented</p></li>
+            <li><p>85% - Minor error exists</p></li>
+            <li><p>70% - A major error or multiple minor errors exist</p></li>
+            <li><p>50% - A good attempt was made.</p></li>
+            <li><p>0% - No attempt made.</p></li>
+        </ul>
+
+        <p>If necessary, scores in between the above classifications can be assigned.</p>
+
+        <h4>Functionality</h4>
+        <ul>
+            <li><p>Minor issues - Not adhering to the spec for the rules of the game, or speed. (If things have been changed for an "above and beyond" feature, and it's obvious that the concepts are understood, then changing the rules of the game is not a problem.)</p></li>
+            <li><p>Major issues - Required functionality missing (e.g., bullets firing at incorrect angles, targets not being hit correctly) </p></li>
+            <li><p>Attempt made - A game element is there, but doesn't really do anything. Or, this could also include cases where code is present for the class, but it doesn't render on the screen at all.</p></li>
+        </ul>
+
+        <h4>Inheritance</h4>
+        <p>Things to look for:</p>
+        <ul>
+            <li><p>Should have base flying object</p></li>
+            <li><p>Bullet and target should both inherit from flying object</p></li>
+            <li><p>Specific kinds of targets should inherit from target. (It is fine to either have target be an abstract base class and then have 3 derived classes from it, or to have the base target class be used for the normal target and only 2 derived classes.)</p></li>
+            <li><p>The base class should handle: Point, velocity, advance(), and is_off_screen()</p></li>
+        </ul>
+        <p>Scoring guidelines:</p>
+        <ul>
+            <li><p>Minor issues - Inheritance is used for all obvious components, but additional opportunities exist to remove redundant code</p></li>
+            <li><p>Major issues - Inheritance is used for some things (e.g., point and velocity) but not for other obvious things (e.g., advance())</p></li>
+            <li><p>Attempt made - The program has inheritance, but doesn't take advantage of it</p></li>
+        </ul>
+        <h4>Overriding Functions (Polymorphism)</h4>
+
+        <p>Things to look for:</p>
+        <ul>
+            <li><p>a draw function should exist on each derived class</p></li>
+            <li><p>hit function should probably be in the base "target" class and then overridden in the strong class. (Normal and safe can potentially take advantage of the same logic, but strong logic is likely different)</p></li>
+            <li><p>The virtual functions should be used in Game (for example, target.draw and target.hit) -- Make sure they aren't putting logic in the game class that says "if type == strong_target, then do a different kind of hit")</p></li>
+        </ul>
+
+        <p>Scoring guidelines:</p>
+        <ul>
+            <li><p>Minor issues - Separate overridden functions are not cleanly separated</p></li>
+            <li><p>Major issues - Hit or draw function is all in one place / overly complex / lots of ifs</p></li>
+            <li><p>Attempt made - Methods were overridden, but then in Game class, if statements were used to determine the type of the target to call separate methods, rather than using the virtual functions</p></li>
+        </ul>
+        
+        <h4>Cohesion / Modularity</h4>
+        <p>This is scored more or less holistically, with questions like the following in mind:</p>
+        <ul>
+            <li><p>Do classes contain what they should and nothing else?</p></li>
+            <li><p>Is there logic in a base class that does not apply to all derived classes?</p></li>
+            <li><p>Is game doing too much with the inner workings of a class that should be handled via methods?</p></li>
+        </ul>
+
+        <h4>Code Quality</h4>
+        <p>For this item, we are looking for general readability. Considering items like:</p>
+        <ul>
+            <li><p>Is logic overly complex (e.g., to determine a calculation)</p></li>
+            <li><p>Are constants used instead of hard coded values</p></li>
+        </ul>
+
+        <h4>Style</h4>
+        <p>We are looking for the following:</p>
+        <ul>
+            <li><p>Class and method headers (should be using <code>"""</code> rather than <code>#</code>)</p></li>
+            <li><p>Appropriate inline comments</p></li>
+            <li><p>Avoiding too short or non-descriptive variable names (using a short name is fine for a short lived variable such as "<code>for b : self.bullets</code>", but not for a member variable.</p></li>
+            <li><p>Appropriate use of whitespace (vertical and within an expression)</p></li>
+        </ul>
+
+        <h4>Above and beyond</h4>
+        <p>We are looking for two "minor" additions, or one "major" one. Use your best judgment here.</p>
+
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
