@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Data Structures</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+
+        <h2>03 Prepare : Data Structures</h2>
+        <p class="subtitle">Dynamic Arrays</p>
+
+        <h3>Outcomes</h3>
+        <p>At the end of this study, successful students will be able to:</p>
+        <ol>
+            <li><p>Articulate the strengths and weaknesses of Dynamic Arrays.</p></li>
+            <li><p>Use Dynamic Arrays in Python to solve problems.</p></li>
+        </ol>  
+
+        <h3>Preparation Material</h3>
+        <p>Please read the following:</p>
+        <ul>
+            <li><p><a href="https://en.wikipedia.org/wiki/Dynamic_array" target="_BLANK">Wikipedia: Dynamic Arrays</a></p></li>
+        </ul>
+
+        <p>Please be aware that <em>lists</em> in Python, <em>vectors</em> in C++, <em>ArrayLists</em> in Java and <em>Lists</em> in C# are all dynamic arrays, so you will often see these terms floating around as well.</p>
+
+        <h3>Supplementary Discussion</h3>
+        <p>On of the biggest benefits of traditional arrays (such as those in C++) is that you can directly access an element by its index, such as words[17]. The place in memory to find can be calculated, so you can jump right to it, and not have to iterate through the preceding items to find it. A major downside to a traditional arrays is that once defined, their size cannot be changed. It might seem simple to just say "use the next spot in memory," but that memory may be used for something else.</p>
+
+        <p>Dynamic arrays add the ability to resize the array. To accomplish this, when an attempt is made to add an item to an array that is at capacity, a new, larger array is allocated, then every item is copied over from the original array. Finally, the original array is deleted. This process takes O(n) time (which is bad) because it has to copy over every element in the list.</p>
+
+        <p>To avoid this expensive operation every time something is added to the list, when we do resize the list, we make it larger than is currently needed, so that the next addition doesn't require this work. When choosing a new size for the array, we can double the size (or something similar, as long as it has exponential growth), so that the times when this is necessary occur less and less frequently as it grows. Because of this exponential back-off, even though in some cases the cost of adding to the list is O(n), the effective amortized cost for addition is only O(1). See the reading material for a more detailed explanation of this calculation.</p>
+
+        <p>In addition to the auto-resizing capability, Dynamic Arrays maintain other properties of traditional Arrays:</p>
+
+        <ul>
+            <li><p>O(1) Data access by index - You can jump right to the spot you want, based on its index.</p></li>
+            <li><p>O(n) Insertion to the beginning of the list - Everything in the list most be shuffled down to make room for the new item.</p></li>
+            <li><p>O(n) Removal from the beginning of the list - Everything must be shuffled up to fill the empty spot.</p></li>
+            <li><p>O(1) (amortized) Insertion at the end of the list - See discussion above.</p></li>
+            <li><p>O(1) Remove at the end of the list - Nothing needs to be shuffled.</p></li>
+        </ul>
+
+
+
+<!--         <h3>Data Structures for the Common Person</h3>
+        <p>With an understanding of the fundamentals of linked lists, we now join our commoner, Steve, and his fledgling hamburger stand. Please watch the following short video:</p>
+
+        <ul>
+            <li><p>(Coming soon!) <a href="#" target="_blank">Data structures for the common person - Dynamic Arrays</a></p></li>
+        </ul>
+ -->
+        <h3>Using Dynamic Arrays in Python</h3>
+
+        <p>As mentioned, in Pythons, the built-in <code>list</code> data structure is actually dynamic array! This means that using them in Python is very natural and easy.</p>
+
+        <p>Lists can be created with either the <code>list()</code> or <code>[]</code> syntax:</p>
+
+<pre><code class="python">
+cars = []
+trucks = list()
+</code></pre> 
+
+        <p>Items can be added to the list via the <code>.append()</code> method (and also the <code>.insert()</code> method), which takes care of all of the resizing work automatically for us!</p>
+
+<pre><code class="python">
+cars = []
+
+cars.append("Ford")
+cars.append("Mazda")
+cars.append("Dodge")
+
+# Add one to the beginning, this is O(n) because everything has to be
+# shuffled down to make room.
+cars.insert(0, "Toyota")
+
+</code></pre> 
+
+        <p>Items in a list can be access by their index:</p>
+
+<pre><code class="python">
+print(cars[2])
+</code></pre> 
+
+        <p>A list can be iterated using either the built-in for loop, or via the index.</p>
+
+<pre><code class="python">
+for car in cars:
+    print(car)
+
+# or, this more cumbersome way (don't do this unless you have a specific reason)
+for i in range(len(cars)):
+    print(car[i])
+</code></pre> 
+
+        <h3>Homework Assignment</h3>
+        <p>Make a list for odd numbers and one for even numbers. Ask the user for numbers and put them in the appropriate list. When they are done, the user can type 0, then the program displays all the even numbers followed by all the odd numbers.</p>
+
+        <h4>Instructions</h4>
+        <p>Use the following steps to guide your development.</p>
+        <ol>
+            <li><p>Create two different lists.</p></li>
+            <li><p>Create a loop that prompts the user for a number (0 to quit).</p></li>
+            <li><p>After each number is entered, put it in the correct list.</p></li>
+            <li><p>After a 0 is entered, loop through each number in the even list and display it, then loop through each number in the odd list and display it.</p></li>
+            <li><p>Test your program with different amounts of even and odd numbers, including cases where you don't include any of one type or the other.</p></li>
+        </ol>
+
+        <h4>Sample output</h4>
+<pre><code class="bash">
+Enter a number (0 to quit): <span class="user-input">6</span>
+Enter a number (0 to quit): <span class="user-input">15</span>
+Enter a number (0 to quit): <span class="user-input">8</span>
+Enter a number (0 to quit): <span class="user-input">82</span>
+Enter a number (0 to quit): <span class="user-input">3</span>
+Enter a number (0 to quit): <span class="user-input">124</span>
+Enter a number (0 to quit): <span class="user-input">0</span>
+
+Even numbers:
+6
+8
+82
+124
+
+Odd numbers:
+15
+3
+</code></pre>
+
+        <h4>Testing your program</h4>
+        <p>To help keep your focus squarely on the data structure involved, and not on matching a particular testBed output, an automated grading script is not provided. Instead, test your own code, ensuring that everything works as you would expect. Don't forget to test boundary conditions such as not entering any numbers, or entering all of one type and ensure that the program behaves as expected.</p>
+
+        <h3>Submission</h3>
+        <p>When you have a good understanding of this data structure and have completed the programming project, take the accompanying I-Learn Quiz. It has questions about how the data structure works, and also, has places for your to report on the parts of the programming assignment that you completed.</p>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+        
+
+    </article>
+
+</body>
+
+</html>
