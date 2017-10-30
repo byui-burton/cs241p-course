@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Data Structures</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+<!--     <img class="logo" src="../course/byui.png" />
+ -->    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+
+        <h2>07 Prepare : Data Structures</h2>
+        <p class="subtitle">Queues</p>
+
+        <h3>Outcomes</h3>
+        <p>At the end of this study, successful students will be able to:</p>
+        <ol>
+            <li><p>Articulate the strengths and weaknesses of recursion.</p></li>
+            <li><p>Use recursion in Python to solve problems.</p></li>
+        </ol>  
+
+        <h4>Overview</h4>
+        <p>To prepare us for a few of the upcoming data structures and algorithms we will study, we need an additional tool in our tool belt: <em>Recursion</em>.</p>
+
+        <p>At this point, we are comfortable having functions call other functions. And even having function A call B, then B call C, and even C call D doesn't really scare us very much. The computer doesn't somehow lose track of where it is, of the value of variables in function A, just because other functions are being called.</p>
+
+        <p>But what if function A called itself? Is that even legal? Does it just cause an error? This is called recursion.</p>
+
+        <h4>Preparation Material</h4>
+        <p>Please read the following:</p>
+
+        <ul>
+            <li><p><a href="https://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/recursion.html" target="_blank">https://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/recursion.html</a></p></li>
+        </ul>
+
+<!--         <h3>Data Structures for the Common Person</h3>
+        <p>With an understanding of the fundamentals of queues, we now join our commoner, Steve, and his fledgling hamburger stand. Please watch the following short video:</p>
+
+        <ul>
+            <li><p>(Coming soon!) <a href="#" target="_blank">Data structures for the common person - Queues</a></p></li>
+        </ul>
+ -->
+
+        <h3>Using Recursion in Python</h3>
+        <p>When it comes to using recursion in Python, there is no difference between a function calling itself, and a function that calls a different one. The only trick is to make sure there is a way to stop the recursion (i.e., a base case).</p>
+
+        <p>Consider the task of a countdown function, that counts from a given number down to 1. While this problem could certain be solved with a loop (and in this case that is an easier/better solution), it can be solved via recursion and can illustrate the necessary components. For example, if you consider the case of starting with 5. You could view the problem as displaying 5, followed by a countdown beginning with 4.</p>
+
+        <p>The following code shows how to define this function in terms of a call to the next number, which is 1 smaller.</p>
+
+<pre><code class="python">
+def countdown(num):
+    print(num)
+
+    next_num = num - 1
+    countdown(next_num)
+
+    # Note, we still need a base case...
+</code></pre>
+
+        <p>The next task is to find a base case. This is the time, when the function should stop calling itself and return. We want this case to be as simple as possible. For this problem, we could choose 1, where the logic would require displaying 1, and then returning. We could also choose 0, which is an even easier case: we don't display anything just return.</p>
+
+        <p>The following code is updated to include a base case. We often include these at the top of the function.</p>
+
+<pre><code class="python">
+def countdown(num):
+    if num == 0:
+        return
+
+    # We could use an "else" here, but we really don't have to because
+    # the return statement from the line above will end the function
+    # right there for the base case. Then, anything that follows is the
+    # recursive case
+
+    print(num)
+
+    next_num = num - 1
+    countdown(next_num)
+</code></pre>
+
+        <p>Finally, two other things to simplify the function: First, we don't need to create a separate variable for <code>next_num</code>, but can just subtract 1 from our variable right in the function call. Second, while the base case works by checking for 0, if by some accident we skipped over 0 and got to -1, this could would not stop (until an error occurs). To safeguard against this, we can change our check to be "<= 0" to ensure that it stops in this case as well.</p>
+
+        <p>The following code shows an updated, simplified recursive solution to the countdown problem:</p>
+
+<pre><code class="python">
+def countdown(num):
+    # Check for the base case
+    if num <= 0:
+        return
+
+    # do the work of the function
+    print(num)
+
+    # make the recursive call
+    countdown(num - 1)
+</code></pre>
+
+
+
+        <h3>Homework Assignment</h3>
+        <p>Write a program that uses recursion to compute the n-th item in the Fibonacci sequence. Refer to the wikipedia article: <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonacci Number</a> for more information about this sequence.</p>
+
+        <h4>Instructions</h4>
+        <p>Follow these steps to guide you through the process:</p>
+
+        <ol>
+            <li><p>Identify how the n-th item can be expressed in terms of other Fibonacci numbers.</p></li>
+            <li><p>Identify the base case(s) to stop the recursion. (There may be more than one... this takes a little bit of thinking.)</p></li>
+            <li><p>Write a function, <code>def fib(n)</code> that computes the Fibonacci number at index n.</p><p>Do not pass any other variables to this function, it should be able to compute this using only the index.</p></li>
+            <li><p>Write a main function that asks the user for the index of the Fibonacci number they want to compute. It should then pass this to your <code>fib</code> function, and display the result.</p></li>
+            <li><p>Test your program with several different values of n.</p></li>
+
+        </ol>
+
+        <p>As far as "the first number in the sequence," you can assume that fib(0) is 0, fib(1) is 1, and fib(2) is 1.</p>
+
+        <h4>Sample Output</h4>
+
+<pre><code class="bash">
+Enter a Fibonacci index: 7
+The Fibonacci number is: 13
+</code></pre> 
+
+        <h4>Testing your program</h4>
+        <p>An automated testBed script not available for your program. Instead please manually test your program with these values (and verify that you receive the expected result):</p>
+
+        <ul>
+            <li><p>fib(0) -> 0</p></li>
+            <li><p>fib(1) -> 1</p></li>
+            <li><p>fib(7) -> 13</p></li>
+            <li><p>fib(14) -> 377</p></li>
+            <li><p>fib(20) -> 6765</p></li>
+        </ul>
+
+
+
+        <h3>Submission</h3>
+        <p>You are encouraged to work with others on the programming and the quiz.</p>
+
+        <p>When you have a good understanding of this data structure and have completed the programming project, take the accompanying I-Learn Quiz. It has questions about how the data structure works, and also, has places for your to report on the parts of the programming assignment that you completed.</p>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+        
+
+    </article>
+
+</body>
+
+</html>
