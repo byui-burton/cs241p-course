@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CS 241 - Assessment Guidelines</title>
+    <link rel="stylesheet" type="text/css" href="../course/style.css" />
+</head>
+
+<body>
+<div id="courseTitle">
+    <span class="icon-byui-logo"></span>
+    <h1>OO Programming and Data Structures | CS 241</h1>
+</div>
+    <article>
+        <h2>03 Prove : Assessment Guidelines</h2>
+
+        <h3>Overview</h3>
+        <p>This document outlines the guidelines for instructors and teaching assistants to use as they assess the assignment. It is intended to give structure and guidance to the grading process to ensure that the most important components of the assignment are highlighted, and to promote consistency across sections.</p>
+
+        <p>In all cases, the instructor has the latitude to deviate from this rubric on a case-by-base basis to provide the holistic assessment that, in their judgment, best matches the assignment.</p>
+
+        <h3>Fundamental Concepts</h3>
+        <p>This assignment is designed to highlight the following fundamental concepts:</p>
+        <ul>
+            <li><p>Use of objects and methods - It is important to see the Robot class with variables and methods, <strong>not</strong> lots of logic back in a main function.</p></li>
+        </ul>
+
+        <h3>Scoring</h3>
+        <p>The following categories are used to score this assignment:</p>
+<pre>
+/40 - Functionality (moving correctly, checking fuel, etc.)
+/20 - Class Member Variables
+/20 - Class Member Functions
+/20 - Code Quality and Style
+---------
+/100 - Total
+</pre>
+        <p></p>
+
+        <h4>Overall Scoring</h4>
+        <p>For each of the categories the following general scoring guidelines apply:</p>
+        <ul>
+            <li><p>100% - Correctly implemented</p></li>
+            <li><p>85% - Minor error exists</p></li>
+            <li><p>70% - A major error or multiple minor errors exist</p></li>
+            <li><p>50% - A good attempt was made.</p></li>
+            <li><p>0% - No attempt made.</p></li>
+        </ul>
+
+        <p>If necessary, scores in between the above classifications can be assigned.</p>
+
+        <h4>Examples of Major/Minor errors</h4>
+        <p>Functionality</p>
+        <ul>
+            <li><p>Major - Moving doesn’t work or firing doesn’t work</p></li>
+            <li><p>Major - Fuel is not checked or subtracted correctly.</p></li>
+            <li><p>Minor - Everything works correctly, but doesn't match the testbed formatting</p></li>
+            <li><p>Minor - Quit doesn't work correctly</p></li>
+            <li><p>Minor - Up/Down are backwards from the spec</p></li>
+        </ul>
+
+        <p>Member variables</p>
+        <ul>
+            <li><p>Major - Member variables not are initialized in the init function</p></li>
+            <li><p>Minor - Member variables are not initialized to good default values</p></li>
+        </ul>
+
+        <p>Member functions</p>
+        <ul>
+            <li><p>Attempt - No member functions for moving</p></li>
+            <li><p>Attempt - No member function for status</p></li>
+            <li><p>Attempt - No member functions for firing</p></li>
+            <li><p>Major - Doing all the logic in main (or some other non-member function) rather than using the appropriate member function</p>
+                <ul><li><p>It is fine if they do prompting and the if statements to check for the input in either main or in a member function.</p></li></ul>
+            </li>
+
+            <li><p>Minor - Check for fuel in main, but did other things (update position, etc.) in the correct member function.</p></li>
+        </ul>
+
+<p>Code Quality / Style</p>
+        <ul>
+            <li><p>Major - Bad Practice in looping / calling functions</p></li>
+            <li><p>Minor - Using break to leave the loop rather than the condition</p></li>
+            <li><p>Minor - Have duplicated logic in many member functions to check the fuel that could have been consolidated into a single member function.</p></li>
+            <li><p>Minor - No comments</p>
+                <ul><li><p>It is ok if they used inline comments (<code>#</code>) rather than docstring comments (<code>"""</code>) for function headers, but please suggest the use of the proper one.</p></li></ul>
+            </li>
+        </ul>
+    
+
+    </article>
+
+   <script src="../course/js/highlight/highlight.pack.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>
