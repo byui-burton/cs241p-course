@@ -1,6 +1,6 @@
 Your Name:
 
-1. In your own words, briefly describe what object-oriented programming means?
+1. In your own words, briefly describe what object-oriented programming means.
 
 
 2. What is the difference between a class and an object?
