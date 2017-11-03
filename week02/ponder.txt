@@ -1,9 +1,9 @@
 Your Name:
 
-1. In your own words, briefly describe what object-oriented programming means.
+1. Describe two benefits of using functions? 
 
 
-2. What is the difference between a class and an object?
+2. If you were getting paid to write this week's "prove" assignment, and could spend another 100 hours on it, what would you do differently?
 
 
 3. What is the most interesting thing you learned as a part of your work for this class this week?
