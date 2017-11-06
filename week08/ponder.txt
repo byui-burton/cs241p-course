@@ -1,6 +1,6 @@
 Your Name:
 
-1. In your own words, description encapsulation.
+1. In your own words, describe encapsulation.
 
 
 2. What is a benefit of using a property instead of just having a setter function (e.g., set_angle(45))?
