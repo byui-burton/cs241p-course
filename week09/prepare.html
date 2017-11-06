@@ -15,15 +15,44 @@
     <article>
         <h2>09 Prepare : Reading</h2>
 
+
+        <h3>Outcomes</h3>
+        <p>At the end of this week, successful students will be able to:</p>
+        <ol>
+            <li><p>Show fluency in discussing exceptions and error handling.</p></li>
+            <li><p>Write programs that correctly use exceptions and error handling to solve problems.</p></li>
+        </ol>
+
         <h3>Preparation Material</h3>
-        <p>For this week, please read the following sections from the textbook, "Python 3 Object-oriented Programming" by Dusty Phillips.</p>
+        <p>For this week, please read the following introduction to Exception/Error handling:</p>
 
         <ul>
-            <li><p>Chapter 4 - Expecting the Unexpected (In my copy this is pp. 95-123).</p></li>
-
+            <li><p><a href="https://www.python-course.eu/exception_handling.php" target="_blank">Exception Handling</a></p></li>
         </ul>
 
+        <h4>A note about one of the examples in the reading:</h4>
+        <p>For one of the examples in the reading, they showed how to use a <code>while True</code> loop with a <code>break</code> statement. While this works, it can sometimes make the code difficult to follow to have loops exit at non-standard times (i.e., using break statements), so it is usually considered better practice to let the loop's condition cause it to exit.</p>
+        <p>With this in mind, we could rework the code from the example to be something more like:</p>
 
+<pre><code class="python">
+valid_input = False
+
+while not valid_input:
+    try:
+        n = int(input("Please enter an integer: "))
+        valid_input = True
+    except ValueError:
+        print("Not a valid integer, please try again.")
+
+print("Successfully entered an integer.")
+</code></pre>
+
+
+       <script src="../course/js/highlight/highlight.pack.js"></script>
+       <script>hljs.initHighlightingOnLoad();</script>
+
+
+    </article>
 </body>
 
 </html>
